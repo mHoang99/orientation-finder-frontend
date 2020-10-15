@@ -1,0 +1,12 @@
+::-webkit-input-placeholder {
+    color: white
+}
+
+.ErrorRegister {
+    margin-top: 0 auto;
+    margin-bottom: 3vh;
+}
+
+.RegisterForm{
+    width: 100%;
+}

@@ -1,0 +1,10 @@
+.SubmitButton {
+    background-color: #e09ff5;
+    width: 50%;
+    /* background-color: rgba(101, 204, 241, 0.9)!important; */
+    border: none;
+}
+
+.SubmitButton:hover {
+    background-color: rgb(217, 245, 255);
+}

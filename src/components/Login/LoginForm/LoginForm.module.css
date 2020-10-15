@@ -1,0 +1,12 @@
+.InputForm {
+    width: 100%;
+}
+
+::-webkit-input-placeholder {
+    color: white
+}
+
+.ErrorLogin {
+    margin-top: 0 auto;
+    margin-bottom: 3vh;
+}
