@@ -3,7 +3,7 @@
 }
 
 ::-webkit-input-placeholder {
-    color: white
+    color: white;
 }
 
 .ErrorLogin {
@@ -13,21 +13,44 @@
 
 .SubmitButton {
     background-color: pink;
-    width: 50%;
+    width: calc(50% - 10px);
+    border: none;
+    animation: popout 1s ease;
+    -webkit-animation: popout 1s ease;
+    margin-left: 20px;
+}
+
+.SubmitButton:hover {
+    background-color: #f7f7f7;
+    color: pink;
+}
+
+.FacebookButton {
+    background-color: #15a4fa;
+    width: calc(50% - 10px);
     border: none;
     animation: popout 1s ease;
     -webkit-animation: popout 1s ease;
 }
 
-.SubmitButton:hover {
-    background-color: rgb(217, 245, 255);
+.FacebookButton:hover {
+    background-color: #f7f7f7;
+    color: #15a4fa;
 }
 
 @keyframes popout {
-    from{width: 0;}
-    to{width: 50%;}
+    from {
+        width: 0;
+    }
+    to {
+        width: calc(50% - 10px);
+    }
 }
 @-webkit-keyframes popout {
-    from{width: 0;}
-    to{width: 50%;}
+    from {
+        width: 0;
+    }
+    to {
+        width: calc(50% - 10px);
+    }
 }

@@ -74,7 +74,7 @@ class RegisterForm extends React.Component {
     render() {
         return (
             <Form className={cssClasses.InputForm}
-                align="begin"
+                align="center"
                 name="register"
                 onFinish={this.handleFormSubmit}
                 scrollToFirstError
@@ -174,7 +174,7 @@ class RegisterForm extends React.Component {
                     ]}
                 >
                     <Checkbox>
-                        I have read the <a href="">agreement</a>
+                        I have read the <a href="/#">agreement</a>
                     </Checkbox>
                 </Form.Item>
 

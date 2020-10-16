@@ -14,6 +14,7 @@ class Register extends React.Component {
                 <RegisterForm />
                 <p className={cssClasses.HadAccount}>
                     Already had an account? <a
+                        href="/#"
                         onClick={this.props.switchType}
                     >Login</a>
                 </p>

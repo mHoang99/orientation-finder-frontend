@@ -1,8 +1,9 @@
 import React from 'react';
-import { Form, Input, Alert, Button, Row } from "antd";
+import { Form, Input, Alert, Button} from "antd";
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
 import cssClasses from './LoginForm.module.css';
 import AuthService from '../../../services/auth.service';
+import FacebookLogin from 'react-facebook-login/dist/facebook-login-render-props'
 
 class LoginForm extends React.Component {
 
@@ -49,10 +50,14 @@ class LoginForm extends React.Component {
         console.log('Failed:', error);
     };
 
+    responseFacebook = (response) => {
+        console.log(response);
+    }
+
     render() {
         return (
             <Form className={cssClasses.InputForm}
-                align="end"
+                align="center"
                 onFinish={this.handleFormSubmit}
                 name="basic"
                 initialValues={{
@@ -118,6 +123,25 @@ class LoginForm extends React.Component {
                 </div>
 
                 <Form.Item>
+                    <FacebookLogin
+                        appId="611857186158857"
+                        autoLoad={true}
+                        fields="name,email,picture"
+                        callback={this.responseFacebook}
+                        render={renderProps => (
+                            <Button
+                                className={cssClasses.FacebookButton}
+                                type="primary"
+                                shape='round'
+                                size='large'
+                                block
+                                loading={this.state.loading}
+                                onClick={renderProps.onClick}
+                            >
+                                FACEBOOK
+                            </Button>
+                        )}
+                    />
                     <Button className={cssClasses.SubmitButton}
                         type="primary"
                         shape='round'
@@ -126,7 +150,7 @@ class LoginForm extends React.Component {
                         block
                         loading={this.state.loading}
                     >
-                        Login
+                        LOGIN
                         </Button>
                 </Form.Item>
             </Form>
