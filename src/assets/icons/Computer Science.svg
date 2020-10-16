@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="118px" height="118px" viewBox="0 0 118 118" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 61.2 (89653) - https://sketch.com -->
+    <title>billing</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0.5" y="0" width="118" height="118"></rect>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-3">
+            <stop stop-color="#009EEB" offset="0%"></stop>
+            <stop stop-color="#0065D2" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-4">
+            <stop stop-color="#009EEB" offset="0%"></stop>
+            <stop stop-color="#0065D2" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-5">
+            <stop stop-color="#009EEB" offset="0%"></stop>
+            <stop stop-color="#0065D2" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="32.0512122%" y1="10.6387679%" x2="67.8591094%" y2="100%" id="linearGradient-6">
+            <stop stop-color="#3495FE" offset="0%"></stop>
+            <stop stop-color="#0065D2" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="23.5770125%" y1="44.0188207%" x2="76.2909692%" y2="57.597805%" id="linearGradient-7">
+            <stop stop-color="#3495FE" offset="0%"></stop>
+            <stop stop-color="#0065D2" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="23.5770125%" y1="10.6387679%" x2="76.2909692%" y2="100%" id="linearGradient-8">
+            <stop stop-color="#3495FE" offset="0%"></stop>
+            <stop stop-color="#0065D2" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Landingpage" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard" transform="translate(-32.000000, -28.000000)">
+            <g id="billing" transform="translate(32.000000, 28.000000)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <g id="Mask"></g>
+                <g id="Feature-07-icon" mask="url(#mask-2)">
+                    <g transform="translate(-2.000000, -2.000000)">
+                        <circle id="Oval" fill="url(#linearGradient-3)" fill-rule="nonzero" opacity="0.100000001" transform="translate(61.327517, 61.327517) rotate(88.000000) translate(-61.327517, -61.327517) " cx="61.3275168" cy="61.3275168" r="58.5436242"></circle>
+                        <path d="M82.2591794,75.8326734 C98.990121,81.3717647 112.376511,94.2532188 118.600905,110.659592 C114.699878,112.977837 110.143661,114.309089 105.276515,114.309089 C90.8511334,114.309089 79.1570518,102.615007 79.1570518,88.1896264 C79.1570518,83.7194629 80.2799966,79.5115769 82.259181,75.8326734 L82.2591794,75.8326734 Z" id="Combined-Shape" fill="url(#linearGradient-4)" fill-rule="nonzero" opacity="0.100000001" transform="translate(98.878979, 95.070881) rotate(88.000000) translate(-98.878979, -95.070881) "></path>
+                        <path d="M13.9054044,-3.37193754 C15.5301102,-3.50734694 17.1736637,-3.57641019 18.8333477,-3.57641019 C51.1660986,-3.57641019 77.3769719,22.6344632 77.3769719,54.967214 C77.3769719,63.3886112 75.5988379,71.394703 72.3975326,78.6305266 C70.7728268,78.7659359 69.1292734,78.8349992 67.4695894,78.8349992 C35.1368385,78.8349992 8.92596519,52.6241259 8.92596519,20.2913751 C8.92596519,11.8699778 10.7040991,3.86388608 13.9054044,-3.37193754 Z" id="Combined-Shape" fill="url(#linearGradient-5)" fill-rule="nonzero" opacity="0.100000001" transform="translate(43.151469, 37.629295) rotate(88.000000) translate(-43.151469, -37.629295) "></path>
+                        <g id="Group-39" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(32.000000, 21.000000)">
+                            <rect id="Rectangle" fill="url(#linearGradient-6)" fill-rule="nonzero" x="0" y="8.24131641" width="58.6616278" height="71.1750054" rx="3"></rect>
+                            <rect id="Rectangle-Copy-48" fill="#FFFFFF" fill-rule="nonzero" x="3.76036076" y="8.24131641" width="51.1409063" height="66.679742" rx="3"></rect>
+                            <rect id="Rectangle-Copy-233" fill="#0065D2" fill-rule="nonzero" x="7.52072152" y="21.7271069" width="27.0745974" height="2.99684233" rx="1.49842117"></rect>
+                            <rect id="Rectangle-Copy-234" fill="#0065D2" fill-rule="nonzero" opacity="0.300000012" x="7.52072152" y="26.2223704" width="15.041443" height="2.99684233" rx="1.49842117"></rect>
+                            <rect id="Rectangle-Copy-237" fill="#0065D2" fill-rule="nonzero" x="7.52072152" y="38.2097398" width="43.7705992" height="2.99684233" rx="1.49842117"></rect>
+                            <rect id="Rectangle-Copy-238" fill="#0065D2" fill-rule="nonzero" opacity="0.300000012" x="7.52072152" y="44.0161218" width="23.6902728" height="2.99684233" rx="1.49842117"></rect>
+                            <rect id="Rectangle-Copy-240" fill="#0065D2" fill-rule="nonzero" opacity="0.300000012" x="7.52072152" y="49.8225038" width="27.0745974" height="2.99684233" rx="1.49842117"></rect>
+                            <rect id="Rectangle-Copy-239" fill="#0065D2" fill-rule="nonzero" opacity="0.300000012" x="33.0911746" y="44.0161218" width="18.200146" height="2.99684233" rx="1.49842117"></rect>
+                            <rect id="Rectangle-Copy-241" fill="#0065D2" fill-rule="nonzero" opacity="0.300000012" x="36.2498777" y="49.8225038" width="15.041443" height="2.99684233" rx="1.49842117"></rect>
+                            <rect id="Rectangle-Copy-243" fill="#0065D2" fill-rule="nonzero" opacity="0.300000012" transform="translate(39.446184, 57.127307) scale(-1, 1) translate(-39.446184, -57.127307) " x="27.6010471" y="55.6288858" width="23.6902728" height="2.99684233" rx="1.49842117"></rect>
+                            <rect id="Rectangle-Copy-242" fill="#0065D2" fill-rule="nonzero" opacity="0.300000012" transform="translate(16.620795, 57.127307) scale(-1, 1) translate(-16.620795, -57.127307) " x="7.52072234" y="55.6288858" width="18.200146" height="2.99684233" rx="1.49842117"></rect>
+                            <rect id="Rectangle-Copy-254" fill="#0065D2" fill-rule="nonzero" opacity="0.300000012" x="7.52072152" y="61.4352678" width="23.6902728" height="2.99684233" rx="1.49842117"></rect>
+                            <path d="M18.8018038,2.99684233 L18.8018038,2.44897959 C18.8018038,1.09644551 19.9024371,-3.62521804e-16 21.2601371,-3.62521804e-16 L38.905635,-3.62521804e-16 C40.263335,-3.62521804e-16 41.3639684,1.09644551 41.3639684,2.44897959 L41.3639684,2.99684233 L44.9222122,2.99684233 C46.2799122,2.99684233 47.3805456,4.09328784 47.3805456,5.44582193 L47.3805456,11.0368109 C47.3805456,12.389345 46.2799122,13.4857905 44.9222122,13.4857905 L15.2435599,13.4857905 C13.8858599,13.4857905 12.7852266,12.389345 12.7852266,11.0368109 L12.7852266,5.44582193 C12.7852266,4.09328784 13.8858599,2.99684233 15.2435599,2.99684233 L18.8018038,2.99684233 Z" id="Combined-Shape" fill="url(#linearGradient-7)" fill-rule="nonzero"></path>
+                        </g>
+                        <circle id="Oval-Copy-46" fill="#FE8163" fill-rule="nonzero" transform="translate(24.220464, 58.304204) rotate(124.000000) translate(-24.220464, -58.304204) " cx="24.2204643" cy="58.3042038" r="2.19686724"></circle>
+                        <circle id="Oval-Copy-51" fill="#F3E863" fill-rule="nonzero" transform="translate(73.797216, 106.447390) rotate(124.000000) translate(-73.797216, -106.447390) " cx="73.797216" cy="106.44739" r="2.19686724"></circle>
+                        <circle id="Oval-Copy-52" fill="url(#linearGradient-8)" fill-rule="nonzero" transform="translate(104.898844, 40.154978) rotate(124.000000) translate(-104.898844, -40.154978) " cx="104.898844" cy="40.1549777" r="2.19686724"></circle>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="75px" height="75px" viewBox="0 0 75 75" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 61.2 (89653) - https://sketch.com -->
+    <title>CyStack Cloud-01</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M6.826875,0 C3.058125,0 0,3.05625 0,6.82875 L0,68.173125 C0,71.941875 3.058125,75 6.826875,75 L68.17125,75 C71.94375,75 75,71.941875 75,68.173125 L75,6.82875 C75,3.05625 71.94375,0 68.17125,0 L6.826875,0 Z" id="path-1"></path>
+        <linearGradient x1="13.5117932%" y1="81.5337463%" x2="260.996094%" y2="-116.621094%" id="linearGradient-3">
+            <stop stop-color="#6D4BFF" offset="0%"></stop>
+            <stop stop-color="#D62196" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="7.42178339%" y1="49.9816147%" x2="79.2211135%" y2="49.9816147%" id="linearGradient-4">
+            <stop stop-color="#FFFFFF" stop-opacity="0" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" offset="100%"></stop>
+        </linearGradient>
+        <polygon id="path-5" points="0.988970588 21.1011312 3.92463235 22.7548643 15.3345588 1.87975113 12.3988971 0.2260181"></polygon>
+        <linearGradient x1="81.8475131%" y1="18.4301859%" x2="24.9782544%" y2="83.7029114%" id="linearGradient-7">
+            <stop stop-color="#FFFFFF" stop-opacity="0" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" offset="100%"></stop>
+        </linearGradient>
+        <polygon id="path-8" points="0.0772058824 1.85548643 11.4889706 22.7324661 14.4227941 21.078733 3.01286765 0.201753394"></polygon>
+        <linearGradient x1="80.6763135%" y1="85.3367575%" x2="23.9587709%" y2="18.1318475%" id="linearGradient-10">
+            <stop stop-color="#FFFFFF" stop-opacity="0" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Landingpage" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="landing" transform="translate(-523.000000, -1038.000000)">
+            <g id="product" transform="translate(330.000000, 707.000000)">
+                <g id="Group-6-Copy-5" transform="translate(110.000000, 275.000000)">
+                    <g id="CyStack-Cloud-01" transform="translate(83.000000, 56.000000)">
+                        <g id="Group-3">
+                            <g id="Fill-1-Clipped">
+                                <mask id="mask-2" fill="white">
+                                    <use xlink:href="#path-1"></use>
+                                </mask>
+                                <g id="path-1"></g>
+                                <path d="M6.826875,0 C3.058125,0 0,3.05625 0,6.82875 L0,68.173125 C0,71.941875 3.058125,75 6.826875,75 L68.17125,75 C71.94375,75 75,71.941875 75,68.173125 L75,6.82875 C75,3.05625 71.94375,0 68.17125,0 L6.826875,0 Z" id="Fill-1" fill="url(#linearGradient-3)" fill-rule="nonzero" mask="url(#mask-2)"></path>
+                            </g>
+                        </g>
+                        <path d="M20.4044118,45.2205882 C24.3628083,45.2205882 27.5735294,48.4293622 27.5735294,52.3897059 C27.5735294,56.3481025 24.3628083,59.5588235 20.4044118,59.5588235 C16.4460152,59.5588235 13.2352941,56.3481025 13.2352941,52.3897059 C13.2352941,48.4293622 16.4460152,45.2205882 20.4044118,45.2205882" id="Fill-4" fill="#0056D7" fill-rule="nonzero"></path>
+                        <polygon id="Fill-6" fill="url(#linearGradient-4)" fill-rule="nonzero" points="26.4705882 54.0441176 50.7352941 54.0441176 50.7352941 50.7352941 26.4705882 50.7352941"></polygon>
+                        <g id="Group-12" transform="translate(11.029412, 14.338235)" fill-rule="nonzero">
+                            <path d="M1.53157475,33.4770176 C4.02943015,28.9828853 9.70136642,27.3609 14.2013051,29.8555324 C18.7012439,32.3501647 20.3253248,38.0147824 17.8274694,42.5089147 C15.329614,47.0030471 9.6576777,48.6250324 5.15773897,46.1304 C0.657800245,43.6357676 -0.966280637,37.97115 1.53157475,33.4770176" id="Fill-8" fill="#FFFFFF"></path>
+                            <path d="M20.4626593,4.20615882 C22.3374755,0.833188235 26.594277,-0.382826471 29.9716054,1.48767353 C33.3489338,3.36007059 34.5684191,7.61137941 32.6936029,10.98435 C30.8187868,14.3573206 26.5619853,15.5752324 23.1846569,13.7028353 C19.8073284,11.8304382 18.5878431,7.57912941 20.4626593,4.20615882" id="Fill-10" fill="#0258D9"></path>
+                        </g>
+                        <g id="Group-15" transform="translate(20.955882, 25.367647)">
+                            <g id="Fill-13-Clipped">
+                                <mask id="mask-6" fill="white">
+                                    <use xlink:href="#path-5"></use>
+                                </mask>
+                                <g id="path-5"></g>
+                                <polygon id="Fill-13" fill="url(#linearGradient-7)" fill-rule="nonzero" mask="url(#mask-6)" points="0.988970588 21.1011312 3.92463235 22.7548643 15.3345588 1.87975113 12.3988971 0.2260181"></polygon>
+                            </g>
+                        </g>
+                        <path d="M33.5032438,14.414697 C38.0294985,11.902234 43.7346047,13.5358126 46.2470677,18.0620673 C48.7595307,22.588322 47.1259521,28.2934282 42.5996974,30.8058912 C38.0734427,33.3183543 32.3683365,31.6847756 29.8558735,27.1585209 C27.3434104,22.6322662 28.9769891,16.92716 33.5032438,14.414697" id="Fill-16" fill="#FFFFFF" fill-rule="nonzero"></path>
+                        <g id="Group-20" transform="translate(38.602941, 25.367647)">
+                            <g id="Fill-18-Clipped">
+                                <mask id="mask-9" fill="white">
+                                    <use xlink:href="#path-8"></use>
+                                </mask>
+                                <g id="path-8"></g>
+                                <polygon id="Fill-18" fill="url(#linearGradient-10)" fill-rule="nonzero" mask="url(#mask-9)" points="0.0772058824 1.85548643 11.4889706 22.7324661 14.4227941 21.078733 3.01286765 0.201753394"></polygon>
+                            </g>
+                        </g>
+                        <g id="Group-25" transform="translate(45.220588, 43.014706)" fill-rule="nonzero">
+                            <path d="M5.8865625,3.3585 C9.2203125,1.507875 13.4221875,2.711625 15.2728125,6.045375 C17.1234375,9.379125 15.9196875,13.581 12.5859375,15.431625 C9.2521875,17.28225 5.0503125,16.0785 3.1996875,12.74475 C1.3509375,9.411 2.5528125,5.209125 5.8865625,3.3585" id="Fill-21" fill="#0258D9"></path>
+                            <path d="M9.1948125,0.1970625 C14.2741875,0.1970625 18.3935625,4.3145625 18.3935625,9.3958125 C18.3935625,14.4751875 14.2741875,18.5945625 9.1948125,18.5945625 C4.1154375,18.5945625 -0.0039375,14.4751875 -0.0039375,9.3958125 C-0.0039375,4.3145625 4.1154375,0.1970625 9.1948125,0.1970625" id="Fill-23" fill="#FFFFFF"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
