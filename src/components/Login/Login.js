@@ -10,7 +10,7 @@ class Login extends React.Component {
             <div className={cssClasses.LoginBox}>
                 <div style={{height: "380px"}}>HEADER</div>
                 <LoginForm/>
-                <p>
+                <p className={cssClasses.DontHaveAccount}>
                     Don't have an account? <a 
                     onClick={this.props.switchType}>Register here</a>
                 </p>

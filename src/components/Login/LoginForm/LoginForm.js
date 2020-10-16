@@ -1,8 +1,7 @@
 import React from 'react';
-import { Form, Input, Alert, Button } from "antd";
+import { Form, Input, Alert, Button, Row } from "antd";
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
 import cssClasses from './LoginForm.module.css';
-import SubmitButton from '../../SubmitButton/SubmitButton';
 import AuthService from '../../../services/auth.service';
 
 class LoginForm extends React.Component {
@@ -53,6 +52,7 @@ class LoginForm extends React.Component {
     render() {
         return (
             <Form className={cssClasses.InputForm}
+                align="end"
                 onFinish={this.handleFormSubmit}
                 name="basic"
                 initialValues={{
@@ -117,20 +117,18 @@ class LoginForm extends React.Component {
                     ) : null}
                 </div>
 
-                <Form.Item 
-                >
-                    <SubmitButton
+                <Form.Item>
+                    <Button className={cssClasses.SubmitButton}
+                        type="primary"
+                        shape='round'
                         htmlType="submit"
-                        loading={this.state.isLoading}
-                        onClick={this.handleFormSubmit}>
+                        size='large'
+                        block
+                        loading={this.state.loading}
+                    >
                         Login
-                    </SubmitButton>
+                        </Button>
                 </Form.Item>
-                {/* <Form.Item>
-                    <Button type="primary" htmlType="submit">
-                        Submit
-                    </Button>
-                </Form.Item> */}
             </Form>
         )
     }

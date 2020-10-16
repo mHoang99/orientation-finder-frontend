@@ -12,7 +12,7 @@ class Register extends React.Component {
                     REGISTER
                 </div>
                 <RegisterForm />
-                <p>
+                <p className={cssClasses.HadAccount}>
                     Already had an account? <a
                         onClick={this.props.switchType}
                     >Login</a>

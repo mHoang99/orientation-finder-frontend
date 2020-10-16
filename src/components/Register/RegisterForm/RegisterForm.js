@@ -1,7 +1,6 @@
 import React from 'react';
-import { Form, Input, Checkbox, Alert } from "antd";
+import { Form, Input, Checkbox, Alert, Button } from "antd";
 import cssClasses from './RegisterForm.module.css';
-import SubmitButton from '../../SubmitButton/SubmitButton';
 import AuthService from '../../../services/auth.service';
 
 class RegisterForm extends React.Component {
@@ -75,7 +74,7 @@ class RegisterForm extends React.Component {
     render() {
         return (
             <Form className={cssClasses.InputForm}
-                align="center"
+                align="begin"
                 name="register"
                 onFinish={this.handleFormSubmit}
                 scrollToFirstError
@@ -95,10 +94,7 @@ class RegisterForm extends React.Component {
                     ]}
                 >
                     <Input
-                        style={{
-                            borderRadius: "15px"
-                        }}
-                        type="large"
+                        size='large'
                         placeholder="Email"
                         onChange={this.handleEmailChange}
                     />
@@ -116,9 +112,7 @@ class RegisterForm extends React.Component {
                     hasFeedback
                 >
                     <Input.Password
-                        style={{
-                            borderRadius: "15px"
-                        }}
+                        size='large'
                         placeholder="Password (6 or more characters)"
                         onChange={this.handlePasswordChange}
                     />
@@ -144,9 +138,10 @@ class RegisterForm extends React.Component {
                         }),
                     ]}
                 >
-                    <Input.Password style={{
-                        borderRadius: "15px"
-                    }} placeholder="Confirm password" />
+                    <Input.Password
+                        size='large'
+                        placeholder="Confirm password"
+                    />
                 </Form.Item>
 
                 <Form.Item
@@ -154,9 +149,7 @@ class RegisterForm extends React.Component {
                     rules={[{ required: true, message: 'Please input your fullname!', whitespace: true }]}
                 >
                     <Input
-                        style={{
-                            borderRadius: "15px"
-                        }}
+                        size='large'
                         placeholder="Fullname"
                         onChange={this.handleNameChange}
                     />
@@ -168,9 +161,7 @@ class RegisterForm extends React.Component {
                     rules={[{ required: true, message: 'Please input your phone number!' }]}
                 >
                     <Input
-                        style={{
-                            borderRadius: "15px"
-                        }}
+                        size='large'
                         placeholder="Phone Number"
                         onChange={this.handlePhoneNumChange}
                     />
@@ -197,14 +188,17 @@ class RegisterForm extends React.Component {
                     ) : null}
                 </div>
 
-                <Form.Item
-                >
-                    <SubmitButton
-                        loading={this.state.isLoading}
-                        onClick={this.handleFormSubmit}
+                <Form.Item>
+                    <Button className={cssClasses.SubmitButton}
+                        type="primary"
+                        shape='round'
+                        htmlType="submit"
+                        size='large'
+                        block
+                        loading={this.state.loading}
                     >
                         Register
-                    </SubmitButton>
+                        </Button>
                 </Form.Item>
             </Form>
         )

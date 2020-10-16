@@ -1,10 +1,21 @@
 .SubmitButton {
     background-color: #e09ff5;
-    width: 50%;
     /* background-color: rgba(101, 204, 241, 0.9)!important; */
     border: none;
+    animation: popout 1s ease;
+    -webkit-animation: popout 1s ease;
 }
 
 .SubmitButton:hover {
     background-color: rgb(217, 245, 255);
+}
+
+@keyframes popout {
+    from{width: 0;}
+    to{width: 100%;}
+}
+@-webkit-keyframes popout {
+    from{-webkit-transform:scale(0)}
+    80%{-webkit-transform:scale(1.2)}
+    to{-webkit-transform:scale(1)}
 }

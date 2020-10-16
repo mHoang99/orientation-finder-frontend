@@ -10,3 +10,24 @@
 .RegisterForm{
     width: 100%;
 }
+
+.SubmitButton {
+    background-color: pink;
+    width: 100%;
+    border: none;
+    animation: popout 1s ease;
+    -webkit-animation: popout 1s ease;
+}
+
+.SubmitButton:hover {
+    background-color: rgb(217, 245, 255);
+}
+
+@keyframes popout {
+    from{width: 0;}
+    to{width: 100%;}
+}
+@-webkit-keyframes popout {
+    from{width: 0;}
+    to{width: 100%;}
+}

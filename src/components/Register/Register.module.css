@@ -4,17 +4,18 @@
     max-height: 100%;
     background: #fdfdfd;
     justify-content: center;
-    height: 70vh;
+    height: 100%;
     padding: 10%;
     border-radius: 5px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.RegisterHeader{
+.RegisterHeader {
     height: 150px;
 }
 
-.haveAccount {
+.HadAccount {
+    margin: 0;
     text-align: center;
-    padding-bottom: 2vh;
+    padding-top: 3vh;
 }

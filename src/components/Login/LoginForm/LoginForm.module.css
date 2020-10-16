@@ -8,5 +8,26 @@
 
 .ErrorLogin {
     margin-top: 0 auto;
-    margin-bottom: 3vh;
+    height: 20px;
+}
+
+.SubmitButton {
+    background-color: pink;
+    width: 50%;
+    border: none;
+    animation: popout 1s ease;
+    -webkit-animation: popout 1s ease;
+}
+
+.SubmitButton:hover {
+    background-color: rgb(217, 245, 255);
+}
+
+@keyframes popout {
+    from{width: 0;}
+    to{width: 50%;}
+}
+@-webkit-keyframes popout {
+    from{width: 0;}
+    to{width: 50%;}
 }
