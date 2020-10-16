@@ -8,7 +8,7 @@ import Auth from './container/Auth/Auth';
 const App = () => {
     return (
         <div>
-            <Layout  style={{backgroundColor:"white"}}>
+            <Layout style={{backgroundColor:"white"}}>
                 <Auth />
             </Layout>
         </div>
