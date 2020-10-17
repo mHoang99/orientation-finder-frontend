@@ -10,8 +10,8 @@ const Landing = (props) => {
         <React.Fragment>
             <div className={cssClasses.Header} style={{ backgroundImage: `url(${headerBg})` }}>
                 <div className={cssClasses.ContentHeader}>
-                    <h1 className={cssClasses.Bold} style={{ paddingTop: `7rem` }}> A Crowdsourced Security Platform</h1>
-                    <h2> A Crowdsourced Security Platform</h2>
+                    <h1 className={cssClasses.Bold} style={{ paddingTop: `10rem` }}> An Educational Service Center</h1>
+                    <h2 style={{margin: '2vw 8.3%'}}>ESC will help you figure out which Information Technology major is the most compatible with you and find an easy way to get closer with IT, including many related online or offline courses from many reliable organizations</h2>
                     <div style={{ margin: `50px auto` }}><img src={logo} /></div>
                     <div style={{ margin: `50px auto` }}>
                         <Button className={[cssClasses.QuizButton, cssClasses.Bold].join(' ')}
@@ -19,7 +19,7 @@ const Landing = (props) => {
                             htmlType="submit"
                             size='large'
                         >
-                            Get started
+                            Get Started
                         </Button>
                     </div>
                 </div>
@@ -29,7 +29,7 @@ const Landing = (props) => {
                 <Row>
                     <Col xs={{ span: 24 }} lg={{ span: 12, offset: 2 }}>
                         <h1 className={cssClasses.Bold}  style={{ paddingTop: `7rem` }}>For Organization</h1>
-                        <p style={{ marginBottom: `32px`, fontSize: `18px` }}>WhiteHub offers a technological solution that enables access to over 500 security researchers to discover critical vulnerabilities in products, including those not discoverable by using traditional solutions and automated tools.</p>
+                        <p style={{ marginBottom: `32px`, fontSize: `18px` }}>ESC provides an environment for organizations who want to advertise theirs products, IT courses and students who have passion but don't know a right way to start learning IT. </p>
                         <Button className={[cssClasses.PartnerButton, cssClasses.Bold].join(' ')}
                             shape='round'
                             htmlType="submit"
@@ -47,7 +47,7 @@ const Landing = (props) => {
                 <span> 1 month since the launch, ESC has put up impressive numbers</span>
                 <Row>
                     <Col xs={{ span: 24, offset: 1 }} lg={{ span: 7, offset: 1 }}>
-                        <h1 className={cssClasses.Bold} style={{ marginBottom: `10px` }}> 50</h1>
+                        <h1 className={cssClasses.Bold} style={{ marginBottom: `10px` }}> 100</h1>
                         <span> courses created</span>
                     </Col>
                     <Col xs={{ span: 24, offset: 1 }} lg={{ span: 7, offset: 1 }}>

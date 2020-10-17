@@ -12,7 +12,7 @@ import Quiz from "./components/ModalDetail/ModalDoQuiz";
 import Detail from "./components/Oranization/Information";
 import Footer from "./container/Footer/Footer";
 
-const url = "localhost:3000"
+const url = "localhost:3000";
 
 const App = () => {
   console.log(window.location.href);
