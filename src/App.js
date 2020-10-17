@@ -9,7 +9,8 @@ import Course from "./container/Course/Course";
 import CreateCourse from "./container/CreateCourse/CreateCourse";
 import Speciality from "./container/Speciality/Speciality";
 import Header from "./container/Header/Header";
-
+import Quiz from "./components/ModalDetail/ModalDoQuiz";
+import Detail from "./components/Oranization/Information";
 const App = () => {
   return (
     <BrowserRouter>
@@ -20,6 +21,8 @@ const App = () => {
           <Route path="/addcourse" component={CreateCourse} />
           <Route path="/speciality/:sid" component={Speciality} />
           <Route path="/auth/:isRegister" component={Auth} />
+          <Route path="/quiz" component={Quiz} />
+          <Route path="/detail" component={Detail} />
           <Route path="/" exact component={Landing} />
           <Route render={() => <h1>Not found</h1>} />
         </Switch>
