@@ -8,6 +8,14 @@ import cssClasses from './Header.module.css'
 const Header = (props) => {
     return (
         <Layout.Header
+            style={{
+                zIndex: 1,
+                width: '100%',
+                paddingLeft: "2vw",
+                paddingRight: "2vw",
+                height: "70px",
+                backgroundColor: "white"
+            }}
             className={cssClasses.Header}
         >
             <NavBar />
