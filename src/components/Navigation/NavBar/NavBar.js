@@ -47,7 +47,7 @@ class NavBar extends React.Component {
                 style={{ backgroundColor: "white" }}>
                 <Col span={16} style={{ display: 'inline-flex' }}>
                     <Col>
-                        <img alt='logo' src={logo} style={{ height: `40px` }} />
+                        <img alt='logo' src={logo} style={{ height: `40px`, cursor:"pointer"}} onClick={e=>{e.preventDefault(); window.location.href="/"}}/>
                     </Col>
                     <Col style={{ marginLeft: '50px' }}>
                         <Dropdown overlay={menu}>
