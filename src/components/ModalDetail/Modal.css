@@ -1,3 +1,33 @@
 .MarginTop {
   margin-top: 10px;
 }
+button#abc:hover {
+  background-color: #046ad2 !important;
+}
+button.base#abc {
+  width: 150px !important;
+  color: white;
+  border: none;
+  border-radius: 5px !important;
+  font-size: 23px !important;
+  height: 46px !important;
+  background-color: #68adf2 !important;
+}
+.ant-modal-header {
+  background-color: #68adf2;
+  padding: 23px 24px;
+}
+.ant-modal-footer button span,
+.ant-modal-footer button div {
+  font-size: 18px;
+  width: 82px;
+}
+
+.Cancel:hover {
+  border-color: #ff4d4f;
+  color: #ff4d4f;
+}
+.Cancel:focus {
+  background-color: #ff4d4f;
+  color: white;
+}
