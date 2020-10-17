@@ -14,7 +14,8 @@ class NavBar extends React.Component {
     };
 
     onClick = ({ key }) => {
-        console.log(`Click on item ${key}`);
+        // console.log(`Click on item ${key}`);
+        window.location.href = `/speciality/${key}`
     };
 
     LoginButtonHandler = () => {
@@ -37,7 +38,7 @@ class NavBar extends React.Component {
                 <Menu.Item key="2">Computer Science</Menu.Item>
                 <Menu.Item key="3">Game Developer</Menu.Item>
                 <Menu.Item key="4">Security</Menu.Item>
-                <Menu.Item key="5">Web Developer</Menu.Item>
+                {/* <Menu.Item key="5">Web Developer</Menu.Item> */}
             </Menu>
         );
         return (
