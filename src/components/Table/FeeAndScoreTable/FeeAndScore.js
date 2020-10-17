@@ -14,9 +14,9 @@ const columns = [
         key: 'name',
     },
     {
-        title: 'Average Score',
-        dataIndex: 'score',
-        key: 'score',
+        title: 'Entry Grade',
+        dataIndex: 'grade',
+        key: 'grade',
         sorter: (a, b) => a.score - b.score,
         sortDirections: ['descend', 'ascend'],
     },
@@ -30,32 +30,24 @@ const columns = [
 ];
 
 
-const data = [
-    {
-        key: '1',
-        spec: 'John Brown',
-        salary: 32,
-    },
-    {
-        key: '2',
-        spec: 'John A',
-        salary: 35,
-    },
-    {
-        key: '3',
-        spec: 'John C',
-        salary: 36,
-    },
-];
 
 
 
 class FeeAndScore extends React.Component {
-    state = {
-        data: this.props.FeeAndScoreTable
-    }
 
     render() {
+        let data = [];
+        this.props.list.forEach(
+            (value, index) => {
+                data.push({
+                    key: index + 1,
+                    name: value.name,
+                    grade: value.grade,
+                    fee: value.tuitionFeePerYear,
+                })
+            }           
+        )
+
         return (
             <React.Fragment>
                 <Card className={cssClasses.container}>

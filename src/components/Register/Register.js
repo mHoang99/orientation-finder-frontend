@@ -11,7 +11,7 @@ class Register extends React.Component {
                 <div className={cssClasses.RegisterHeader} style={{textAlign: 'center'}} >
                     <img src={logo} />
                 </div>
-                <RegisterForm />
+                <RegisterForm switchType={this.props.switchType} />
                 <p className={cssClasses.HadAccount}>
                     Already had an account? <a
                         // href="/#"
