@@ -24,13 +24,8 @@ class LoginForm extends React.Component {
         AuthService.login(this.state.email, this.state.password).then(
             (data) => {
                 console.log(data);
-                localStorage.setItem(
-                    'user', JSON.stringify(data.user)
-                )
-                localStorage.setItem(
-                    'accessToken', data.jwtToken
-                )
-                
+                this.loginSucceed(data);
+
             },
             error => {
                 const resMessage =
@@ -68,6 +63,42 @@ class LoginForm extends React.Component {
 
     responseFacebook = (response) => {
         console.log(response);
+        AuthService.facebookLogin(response.email)
+            .then(
+                (data) => {
+                    if (data.success) {
+                        this.loginSucceed(data);
+                    } else {
+                        sessionStorage.setItem('name', response.name)
+                        sessionStorage.setItem('email', response.email)
+                        this.props.switchType();
+                    }
+                }
+            )
+            .catch(error => {
+                const resMessage =
+                    (error.response &&
+                        error.response.data &&
+                        error.response.data.message) ||
+                    error.message ||
+                    error.toString();
+
+                this.setState({
+                    loading: false,
+                    message: resMessage,
+                });
+            })
+    }
+
+    loginSucceed = (data) => {
+        console.log('geeee')
+        localStorage.setItem(
+            'user', JSON.stringify(data.user)
+        )
+        localStorage.setItem(
+            'accessToken', data.jwtToken
+        )
+        window.location.href = "/";
     }
 
     render() {

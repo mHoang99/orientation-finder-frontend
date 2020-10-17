@@ -1,6 +1,10 @@
 import React from "react";
-import { Button, Col, Row, Modal, Radio, message, Image, Alert } from "antd";
-import { CloseOutlined } from "@ant-design/icons";
+import { Button, Col, Row, Modal, Radio, message, Image, Spin } from "antd";
+import {
+  CloseOutlined,
+  LoadingOutlined,
+  CaretRightOutlined,
+} from "@ant-design/icons";
 import AI from "../../assets/icons/Artificial Intelligence.svg";
 import CS from "../../assets/icons/Computer Science.svg";
 import GD from "../../assets/icons/Game Developer.svg";
@@ -17,7 +21,8 @@ export default class Quiz extends React.Component {
     super(props);
     this.state = {
       start: true,
-      title: "Let do it !!",
+      loading: false,
+      title: "",
       index: 0,
       listQuestion: [],
       answer: [],
@@ -29,7 +34,7 @@ export default class Quiz extends React.Component {
   }
   handleCheckbox = (e) => {
     let listChecked = this.state.answer;
-    listChecked[e.target.name] = e.target.value;
+    listChecked[e.target.name] = e.target.value + 1;
     this.setState({
       answer: listChecked,
     });
@@ -59,6 +64,9 @@ export default class Quiz extends React.Component {
         debugger;
         if (validate(answer, this.state.listQuestion.length)) {
           //handle submit answer
+          this.setState({
+            loading: true,
+          });
           let data = { answer: this.state.answer };
           const options = {
             method: "post",
@@ -79,6 +87,7 @@ export default class Quiz extends React.Component {
               });
               this.state.data = b;
               this.state.id = a;
+              this.state.loading = false;
               this.setState(this.state);
             })
             .catch((e) => {
@@ -139,6 +148,7 @@ export default class Quiz extends React.Component {
     return (
       <div>
         <Modal
+          maskClosable={false}
           id="quiz"
           cancelButtonProps={{
             style: {
@@ -156,11 +166,11 @@ export default class Quiz extends React.Component {
               ? "40%"
               : this.state.isSubmit == 0
               ? "60%"
-              : "50%"
+              : "35%"
           }
           bodyStyle={{
             overflowY: this.state.isSubmit == 0 ? "auto" : "unset",
-            height: this.state.isSubmit == 0 ? "70vh" : "30vh",
+            height: this.state.isSubmit == 0 ? "70vh" : "35vh",
           }}
           title={
             <Row justify="center">
@@ -192,35 +202,41 @@ export default class Quiz extends React.Component {
                 <div>
                   <Row
                     justify="start"
-                    className="MarginTop"
                     style={{
                       paddingLeft: "5%",
                       fontSize: "23px",
+                      marginTop: "20px",
                       color:
                         this.state.start || this.state.answer[Index]
                           ? "black"
                           : "red",
                     }}
                   >
-                    <span style={{ fontWeight: "600" }}>Q{Index}</span>.
+                    <span style={{ fontWeight: "600" }}>{Index + 1}. </span>{" "}
                     {data.question}
                   </Row>
                   <div
-                    className="MarginTop"
-                    style={{ paddingLeft: "5%", fontSize: "18px" }}
+                    style={{
+                      paddingLeft: "5%",
+                      fontSize: "18px",
+                      marginTop: "10px",
+                    }}
                   >
                     <Radio.Group
                       onChange={this.handleCheckbox}
                       name={Index}
                       size="large"
+                      style={{ width: "100%" }}
                     >
-                      {data.answer.map((data, index) => (
-                        <div key={index}>
-                          <Radio value={index}>
-                            <span style={{ fontSize: "18px" }}>{data}</span>
-                          </Radio>
-                        </div>
-                      ))}
+                      <Row justify="space-between" style={{ width: "100%" }}>
+                        {data.answer.map((data, index) => (
+                          <div key={index}>
+                            <Radio value={index}>
+                              <span style={{ fontSize: "18px" }}>{data}</span>
+                            </Radio>
+                          </div>
+                        ))}
+                      </Row>
                     </Radio.Group>
                   </div>
                   <div
@@ -282,21 +298,22 @@ class Start extends React.Component {
   render() {
     return (
       <div style={{ height: "100%" }}>
-        <Row style={{ fontSize: "23px" }} justify="center">
-          Let's figure out which IT major is suitable with you!
-        </Row>
         <Row
+          style={{ fontSize: "23px", marginTop: "65px", fontWeight: "600" }}
           justify="center"
           align="middle"
-          style={{ height: "-webkit-fill-available" }}
         >
+          Let's figure out which IT major is suitable with you!
+        </Row>
+
+        <Row justify="center" align="middle" style={{ height: "100%" }}>
           <Button
             type="primary"
             className="base"
             id="abc"
             onClick={this.props.getStart}
           >
-            Get started
+            <CaretRightOutlined fill="#ffff" /> Start
           </Button>
         </Row>
       </div>

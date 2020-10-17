@@ -18,9 +18,13 @@ class Speciality extends React.Component {
         intro: "",
         grades: [],
         salary: [],
+<<<<<<< HEAD
         flag: "",
         success: false,
         hiddenFalse: true
+=======
+        point: {}
+>>>>>>> e0ae358fa657cdc7d83926c2e7c09a7b15b00596
     }
 
     componentDidMount = () => {
@@ -35,6 +39,7 @@ class Speciality extends React.Component {
                             intro: res.data.category.intro,
                             grades: res.data.category.grades,
                             salary: res.data.category.salary,
+                            point: res.data.category.point
                         })
                     }
                 }
@@ -67,6 +72,8 @@ class Speciality extends React.Component {
         // console.log(e.target.value)
     }
     render() {
+        let p = (this.state.point.userPoint/this.state.point.maxPoint*100).toFixed(0);
+        p = isNaN(p) ? 0 : p 
         return (
             <React.Fragment>
                 <Container>
@@ -85,7 +92,7 @@ class Speciality extends React.Component {
                                             '0%': '#108ee9',
                                             '100%': '#87d068',
                                         }}
-                                        percent={60}
+                                        percent={p}
                                     />
                                 </Col>
                             </Row>
