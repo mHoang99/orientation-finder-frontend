@@ -37,12 +37,7 @@ class Course extends React.Component {
         dataSource={this.props.data}
         renderItem={(item) => (
           <List.Item>
-            <a
-              target="_blank"
-              href={
-                "https://kids.mindx.edu.vn/?utm_source=google&utm_medium=cpc&utm_campaign=kidsearch&utm_content=branding&gclid=CjwKCAjwrKr8BRB_EiwA7eFapqvxo68ixil0cb1B8NtEEfAaOX7rdRU6z0ovEOwHtoc8xpJ2Q6FkoBoCUrEQAvD_BwE"
-              }
-            >
+            <a target="_blank" href={"#"}>
               <Card
                 className="item-inner"
                 hoverable

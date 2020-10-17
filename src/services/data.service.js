@@ -16,6 +16,14 @@ class DataService {
       }
     );
   }
+  getListCategory(i) {
+    return axios.get(
+      axios.defaults.baseURL + "organization/get-detail?id=" + i,
+      {
+        headers: authHeader(),
+      }
+    );
+  }
   getListOrg() {
     return axios.get(axios.defaults.baseURL + "organization/get-all", {
       headers: authHeader(),
