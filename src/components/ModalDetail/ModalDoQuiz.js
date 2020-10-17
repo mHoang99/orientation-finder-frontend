@@ -199,7 +199,12 @@ class Result extends React.Component {
           <Col align="middle">
             <Row justify="center">
               <a href={"/" + "speciality/1"}>
-                <Image src={this.state.icon[index]} height={100} width={100} />
+                <Image
+                  onClick={(e) => {}}
+                  src={this.state.icon[index]}
+                  height={100}
+                  width={100}
+                />
               </a>
             </Row>
             <Row justify="center" className="MarginTop">
