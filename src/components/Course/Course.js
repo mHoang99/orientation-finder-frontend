@@ -42,7 +42,7 @@ class Course extends React.Component {
         dataSource={this.props.data}
         renderItem={(item) => (
           <List.Item>
-            <a href={`#`}>
+            <a href={"/organization/" + item.organizationId}>
               <Card
                 className="item-inner"
                 hoverable
