@@ -10,6 +10,7 @@ import Course from "./container/Course/Course";
 import CreateCourse from "./container/CreateCourse/CreateCourse";
 import Speciality from "./container/Speciality/Speciality";
 import Header from "./container/Header/Header";
+import Footer from "./container/Footer/Footer"
 
 const App = () => {
   return (
@@ -24,6 +25,7 @@ const App = () => {
           <Route path="/" exact component={Landing} />
           <Route render={() => <h1>Not found</h1>} />
         </Switch>
+        <Footer/>
       </Layout>
     </BrowserRouter>
   );
