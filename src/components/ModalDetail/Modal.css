@@ -25,6 +25,7 @@ button.base#abc {
 .ant-modal-header {
   background-color: #09b7b2;
   padding: 23px 24px;
+  border-radius: 16px 16px 0 0;
 }
 .ant-modal-footer button span,
 .ant-modal-footer button div {
@@ -45,4 +46,7 @@ button.base#abc {
 }
 .ant-modal-body {
   padding: 8px 57px;
+}
+.ant-modal-content {
+  border-radius: 16px;
 }
