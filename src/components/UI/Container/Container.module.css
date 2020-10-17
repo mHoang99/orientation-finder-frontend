@@ -1,0 +1,6 @@
+.Container{
+    margin-top: 70px;
+    padding: 40px 15%;  
+    min-height: calc(100vh - 295px);  
+}
+
