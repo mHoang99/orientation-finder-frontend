@@ -1,0 +1,14 @@
+.footer span {
+    font-weight: bold;
+}
+.footer div {
+color: #fff;
+line-height: 35px;
+}
+.anticon {
+    font-size: 40px;
+    margin: 10px;
+}
+.icons-list{
+    margin: 25px 0;
+}

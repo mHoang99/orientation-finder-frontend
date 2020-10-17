@@ -27,7 +27,7 @@ const Landing = (props) => {
             {/* For company */}
             <div>
                 <Row>
-                    <Col xs={{ span: 24, offset: 1 }} lg={{ span: 12, offset: 2 }}>
+                    <Col xs={{ span: 24 }} lg={{ span: 12, offset: 2 }}>
                         <h1 className={cssClasses.Bold}  style={{ paddingTop: `7rem` }}>For Organization</h1>
                         <p style={{ marginBottom: `32px`, fontSize: `18px` }}>WhiteHub offers a technological solution that enables access to over 500 security researchers to discover critical vulnerabilities in products, including those not discoverable by using traditional solutions and automated tools.</p>
                         <Button className={[cssClasses.PartnerButton, cssClasses.Bold].join(' ')}
@@ -38,7 +38,7 @@ const Landing = (props) => {
                             Register to become a partner
                         </Button>
                     </Col>
-                    <Col xs={{ span: 24, offset: 1 }} lg={{ span: 8 }}><img style={{ maxWidth: `100%` }} src={organization} /> </Col>
+                    <Col xs={{ span: 24}} lg={{ span: 8 }}><img style={{ maxWidth: `100%` }} src={organization} /> </Col>
                 </Row>
             </div>
             {/* Statistic */}
