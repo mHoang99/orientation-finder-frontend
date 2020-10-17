@@ -22,7 +22,7 @@ export default class Quiz extends React.Component {
     this.state = {
       start: true,
       loading: false,
-      title: "",
+      title: "Let's try it! ",
       index: 0,
       listQuestion: [],
       answer: [],

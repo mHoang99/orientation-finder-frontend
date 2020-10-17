@@ -68,7 +68,7 @@ class Course extends React.Component {
                 <Meta
                   style={{ color: "#fff !important" }}
                   avatar={<Avatar src={this.props.logo} />}
-                  title={item.courseContent}
+                  title={item.courseName}
                   description={this.props.oranizationName}
                 />
               </Card>
