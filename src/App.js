@@ -19,7 +19,7 @@ const App = () => {
                     <Route path="/course/:cid" component={Course} />
                     <Route path="/addcourse" component={CreateCourse} />
                     <Route path="/speciality/:sid" component={Speciality} />
-                    <Route path="/auth" exact component={Auth} />
+                    <Route path="/auth/:isRegister" component={Auth} />
                     <Route path="/" exact component={Landing} />
                     <Route render={() => <h1>Not found</h1>} />
                 </Switch>

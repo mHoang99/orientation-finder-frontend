@@ -10,7 +10,8 @@ class Speciality extends React.Component {
 
         return (
             <React.Fragment>
-               Speciality
+                {/* <SalaryInfo/>
+                <SalaryInfo/> */}
             </React.Fragment>
         )
     }
