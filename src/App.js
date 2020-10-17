@@ -28,7 +28,7 @@ const App = () => {
           <Route path="/auth/:isRegister" component={Auth} />
           <Route path="/organization/:id" component={Detail} />
           <Route path="/organization/:id" component={Detail} />
-          <Route path="/organization/" exact component={ListOrg} />
+          <Route path="/organization" exact component={ListOrg} />
 
           <Route path="/" exact component={Landing} />
           <Route path="/abc" exact component={ABC} />

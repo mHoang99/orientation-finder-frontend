@@ -5,20 +5,27 @@ import { Divider, message } from "antd";
 import { Link } from "react-router-dom";
 import Course from "../../components/Course/Course";
 import axios from "axios";
+import dataService from "../../services/data.service";
+
 class Categories extends React.Component {
   state = {
     data: [],
   };
   componentDidMount() {
-    axios
-      .get(axios.defaults.baseURL + "")
+    const options = {
+      method: "get",
+      url: axios.defaults.baseURL + "organization/get-all",
+    };
+    dataService
+      .getListOrg()
       .then((re) => {
         this.setState({
           data: re.data,
         });
       })
       .catch((e) => {
-        message.error(e.reponse);
+        console.log(e.response);
+        // message.error(e.response);
       });
   }
   render() {

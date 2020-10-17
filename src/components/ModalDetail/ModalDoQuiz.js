@@ -10,6 +10,7 @@ import CS from "../../assets/icons/Computer Science.svg";
 import GD from "../../assets/icons/Game Developer.svg";
 import "./Modal.css";
 import axios from "axios";
+import dataService from "../../services/data.service";
 var validate = (answer, length) => {
   for (var i = 0; i < length; i++) {
     if (answer[i] === undefined || answer === null) return false;
@@ -68,13 +69,10 @@ export default class Quiz extends React.Component {
             loading: true,
           });
           let data = { answer: this.state.answer };
-          const options = {
-            method: "post",
-            url: axios.defaults.baseURL + "quiz/answer",
-            data: data,
-          };
+
           // debugger;
-          axios(options)
+          dataService
+            .getAnswerQuiz(data)
             .then((response) => {
               let result = response.data.data;
               // console.log(result);
@@ -124,7 +122,29 @@ export default class Quiz extends React.Component {
   }
   componentDidMount() {
     //get all question and answer, save to listquestion as format of question
+    let data = { answer: [1, 2, 3, 1, 3, 3, 1, 1, 1, 1] };
 
+    // debugger;
+    dataService
+      .getAnswerQuiz(data)
+      .then((response) => {
+        let result = response.data.data;
+        // console.log(result);
+        let a = [],
+          b = [];
+        Object.keys(result).forEach((e) => {
+          console.log(e);
+          b.push(e);
+          a.push(result[e]);
+        });
+        this.state.data = b;
+        this.state.id = a;
+        this.state.loading = false;
+        this.setState(this.state);
+      })
+      .catch((e) => {
+        console.log(e);
+      });
     const options = {
       method: "get",
       url: axios.defaults.baseURL + "quiz/get-all-quiz",
@@ -226,17 +246,15 @@ export default class Quiz extends React.Component {
                       onChange={this.handleCheckbox}
                       name={Index}
                       size="large"
-                      style={{ width: "100%" }}
+                      style={{ width: "100%", paddingLeft: "10px" }}
                     >
-                      <Row justify="space-between" style={{ width: "100%" }}>
-                        {data.answer.map((data, index) => (
-                          <div key={index}>
-                            <Radio value={index}>
-                              <span style={{ fontSize: "18px" }}>{data}</span>
-                            </Radio>
-                          </div>
-                        ))}
-                      </Row>
+                      {data.answer.map((data, index) => (
+                        <div key={index}>
+                          <Radio value={index}>
+                            <span style={{ fontSize: "18px" }}>{data}</span>
+                          </Radio>
+                        </div>
+                      ))}
                     </Radio.Group>
                   </div>
                   <div
