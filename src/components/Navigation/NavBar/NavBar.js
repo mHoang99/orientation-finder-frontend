@@ -3,6 +3,7 @@ import { Row, Col, Dropdown, Menu, Avatar, Button } from 'antd';
 import cssClasses from './NavBar.module.css'
 import { DownOutlined } from '@ant-design/icons';
 import logo from '../../../assets/icons/logo.png';
+import cssCustom from '../NavBar.css'
 
 class NavBar extends React.Component {
     state = {
@@ -42,28 +43,24 @@ class NavBar extends React.Component {
                 style={{ backgroundColor: "white" }}
             >
                 <Col>
-                <img src={logo} style={{height: `40px`}}/>
+                    <img src={logo} style={{ height: `40px` }} />
                 </Col>
                 <Col>
                     <Dropdown overlay={menu}>
                         <a className="ant-dropdown-link" onClick={e => e.preventDefault()}>
-                            Hover me, Click menu item <DownOutlined />
+                            Categories <DownOutlined />
                         </a>
                     </Dropdown>
                 </Col>
                 <Col>
-                    <Dropdown overlay={menu}>
-                        <a className="ant-dropdown-link" onClick={e => e.preventDefault()}>
-                            Hover me, Click menu item <DownOutlined />
+                    <a className="ant-dropdown-link" onClick={e => e.preventDefault()}>
+                        Organizations
                         </a>
-                    </Dropdown>
                 </Col>
                 <Col>
-                    <Dropdown overlay={menu}>
-                        <a className="ant-dropdown-link" onClick={e => e.preventDefault()}>
-                            Hover me, Click menu item <DownOutlined />
+                    <a className="ant-dropdown-link" onClick={e => e.preventDefault()}>
+                        Help Center
                         </a>
-                    </Dropdown>
                 </Col>
 
                 {this.state.currentUser ? (
@@ -111,7 +108,15 @@ class NavBar extends React.Component {
                             >
                                 Register
                             </Button>
-                            <Button
+                            <Button className={[cssClasses.LoginButton, cssClasses.Bold].join(' ')}
+                                shape='round'
+                                htmlType="submit"
+                                size='large'
+                                onClick={this.LoginButtonHandler}
+                            >
+                                Sign in
+                        </Button>
+                            {/* <Button
                                 type="primary"
                                 style={{
                                     width: "100px"
@@ -120,7 +125,7 @@ class NavBar extends React.Component {
                                 onClick={this.LoginButtonHandler}
                             >
                                 Sign in
-                                </Button>
+                                </Button> */}
                         </Col>
                     )
                 }

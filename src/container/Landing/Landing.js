@@ -46,15 +46,15 @@ const Landing = (props) => {
                 <h1 className={cssClasses.Bold} style={{ marginBottom: `10px` }}> ESC in numbers</h1>
                 <span> 1 month since the launch, ESC has put up impressive numbers</span>
                 <Row>
-                    <Col xs={{ span: 24, offset: 1 }} lg={{ span: 6, offset: 1 }}>
+                    <Col xs={{ span: 24, offset: 1 }} lg={{ span: 7, offset: 1 }}>
                         <h1 className={cssClasses.Bold} style={{ marginBottom: `10px` }}> 50</h1>
                         <span> courses created</span>
                     </Col>
-                    <Col xs={{ span: 24, offset: 1 }} lg={{ span: 6, offset: 1 }}>
+                    <Col xs={{ span: 24, offset: 1 }} lg={{ span: 7, offset: 1 }}>
                         <h1 className={cssClasses.Bold} style={{ marginBottom: `10px` }}> 100+</h1>
                         <span> organizations participated</span>
                     </Col>
-                    <Col xs={{ span: 24, offset: 1 }} lg={{ span: 6, offset: 1 }}>
+                    <Col xs={{ span: 24, offset: 1 }} lg={{ span: 7, offset: 1 }}>
                         <h1 className={cssClasses.Bold} style={{ marginBottom: `10px` }}> 800+</h1>
                         <span> students registered</span>
                     </Col>
