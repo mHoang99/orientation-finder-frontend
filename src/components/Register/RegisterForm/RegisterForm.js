@@ -2,6 +2,7 @@ import React from 'react';
 import { Form, Input, Checkbox, Alert, Button } from "antd";
 import cssClasses from './RegisterForm.module.css';
 import AuthService from '../../../services/auth.service';
+import axios from 'axios'
 
 class RegisterForm extends React.Component {
 
@@ -10,8 +11,8 @@ class RegisterForm extends React.Component {
         isLoading: false,
         email: '',
         password: '',
-        full_name: '',
-        tel_num: '',
+        name: '',
+        phone: '',
         is_loading: false,
         message: "",
         successful: false
@@ -30,41 +31,67 @@ class RegisterForm extends React.Component {
 
     };
 
+    handleNameChange = (event) => {
+        this.setState({
+            name: event.target.value,
+        });
+    };
+
+    handlePhoneNumChange = (event) => {
+        this.setState({
+            phone: event.target.value,
+        });
+
+    };
+
+    handleSchoolChange = (event) => {
+        this.setState({
+            school: event.target.value,
+        });
+
+    };
+
     handleFormSubmit = (event) => {
-        event.preventDefault();
 
         this.setState({
             message: "",
             successful: false
         });
 
-        AuthService.register(
-            this.state.username,
-            this.state.email,
-            this.state.password,
-            this.state.full_name,
-            this.state.tel_num,
-        ).then(
-            response => {
-                this.setState({
-                    message: response.data.message,
-                    successful: true
-                });
-            },
-            error => {
-                const resMessage =
-                    (error.response &&
-                        error.response.data &&
-                        error.response.data.message) ||
-                    error.message ||
-                    error.toString();
+        const data = {
+            email: this.state.email,
+            password: this.state.password,
+            name: this.state.name,
+            phone: this.state.phone,
+            school: this.state.school
+        }
 
-                this.setState({
-                    successful: false,
-                    message: resMessage
-                });
-            }
-        );
+        AuthService.register(data)
+            .then(
+                response => {
+                    console.log(response)
+                    this.setState({
+                        message: response.data.message,
+                        successful: true
+                    });
+                }
+            )
+            .catch(
+                error => {
+                    console.log(error.response)
+                    const resMessage =
+                        (error.response &&
+                            error.response.data &&
+                            error.response.data.message) ||
+                        error.message ||
+                        error.toString();
+
+                    this.setState({
+                        successful: false,
+                        message: resMessage
+                    });
+                }
+            )
     };
 
     onFinishFailed = (error) => {
@@ -145,7 +172,7 @@ class RegisterForm extends React.Component {
                 </Form.Item>
 
                 <Form.Item
-                    name="fullName"
+                    name="name"
                     rules={[{ required: true, message: 'Please input your fullname!', whitespace: true }]}
                 >
                     <Input
@@ -166,6 +193,19 @@ class RegisterForm extends React.Component {
                         onChange={this.handlePhoneNumChange}
                     />
                 </Form.Item>
+
+                <Form.Item
+                    name="school"
+                    //label="Phone Number"
+                    rules={[{ required: true, message: 'Please input your school!' }]}
+                >
+                    <Input
+                        size='large'
+                        placeholder="School"
+                        onChange={this.handleSchoolChange}
+                    />
+                </Form.Item>
+
                 <Form.Item
                     name="agreement"
                     valuePropName="checked"

@@ -12,8 +12,12 @@ import Header from "./container/Header/Header";
 import Quiz from "./components/ModalDetail/ModalDoQuiz";
 import Detail from "./components/Oranization/Information";
 import Footer from "./container/Footer/Footer";
+import axios from 'axios'
 
 const url="http://localhost:3000";
+
+axios.defaults.headers.post['Content-Type'] ='application/json;charset=utf-8';
+axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*';
 
 const App = () => {
     console.log(window.location.href)
