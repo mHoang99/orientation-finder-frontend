@@ -47,7 +47,7 @@ class NavBar extends React.Component {
                 style={{ backgroundColor: "white" }}>
                 <Col span={16} style={{ display: 'inline-flex' }}>
                     <Col>
-                        <a href="http://localhost:3000">
+                        <a href="http://34.92.55.141:3000">
                             <img alt='logo' src={logo} style={{ height: `40px` }}
                             />
                         </a>
@@ -56,14 +56,14 @@ class NavBar extends React.Component {
                         <Dropdown overlay={menu}>
                             <a
                                 className="ant-dropdown-link"
-                                onClick={(e) => { window.location.href = 'http://localhost:3000/categories' }}
+                                onClick={(e) => { window.location.href = 'http://34.92.55.141:3000/categories' }}
                             >
                                 Categories <DownOutlined />
                             </a>
                         </Dropdown>
                     </Col>
                     <Col style={{ marginLeft: '20px' }}>
-                        <a className="ant-dropdown-link" href='http://localhost:3000/organizations'>
+                        <a className="ant-dropdown-link" href='http://34.92.55.141:3000/organizations'>
                             Organizations
                         </a>
                     </Col>

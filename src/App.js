@@ -14,7 +14,7 @@ import Footer from "./container/Footer/Footer";
 import ABC from "./container/ABC/ABC";
 import Categories from "./container/Categories/Categories";
 
-const url = "localhost:3000";
+// const url = "34.92.55.141:3000";
 
 const App = () => {
     return (

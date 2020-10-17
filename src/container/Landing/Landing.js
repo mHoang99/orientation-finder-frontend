@@ -18,7 +18,7 @@ class Landing extends React.Component {
       if(localStorage.getItem('accessToken')) {
         this.setState({ visible: true });
       } else {
-          window.location.href = "http://localhost:3000/auth/true"
+          window.location.href = "http://34.92.55.141:3000/auth/true"
       }
   };
   render() {
