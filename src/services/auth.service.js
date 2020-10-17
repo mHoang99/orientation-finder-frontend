@@ -1,4 +1,3 @@
-import { buildQueries } from "@testing-library/react";
 import axios from "axios";
 
 
@@ -30,7 +29,7 @@ class AuthService {
                 if (response.data.accessToken) {
                     localStorage.setItem("user", JSON.stringify(response.data));
                 }
-                
+
                 return response.data;
             });
     }
