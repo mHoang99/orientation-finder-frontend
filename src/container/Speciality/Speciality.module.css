@@ -1,13 +1,14 @@
-.Container{
-    padding: 40px 15%;    
+.Title {
+    padding-top: 30px;
+    margin-bottom: 5px;
 }
 
-.Title{
-    padding-Top: 30px;
-    margin-bottom: 5px; 
-}
-
-.Compatible{
+.Compatible {
     color: grey;
     margin-right: 0px;
+}
+
+.HeadingDivider {
+    font-size: "30px"; 
+    font-weight: "bold";
 }

@@ -1,5 +1,5 @@
 
-.ant-progress-inner.ant-progress-circle-gradient{
+#progressCircle > .ant-progress-inner.ant-progress-circle-gradient{
     width: 200px !important;
     height: 200px !important;
     font-size: 40px !important;

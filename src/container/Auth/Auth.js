@@ -2,6 +2,7 @@ import { Card } from 'antd';
 import React from 'react';
 import Login from '../../components/Login/Login';
 import Register from '../../components/Register/Register';
+import Container from '../../components/UI/Container/Container';
 import cssClasses from './Auth.module.css'
 
 class Auth extends React.Component {
@@ -11,7 +12,7 @@ class Auth extends React.Component {
 
     switchHandler = () => {
         this.setState((prevState) => {
-            return({
+            return ({
                 isLoginFormDisplayed: !prevState.isLoginFormDisplayed
             })
         })
@@ -29,14 +30,16 @@ class Auth extends React.Component {
 
         return (
             <React.Fragment>
-                <Card
-                    className={CardClass}
-                >
-                    {this.state.isLoginFormDisplayed
-                        ? <Login switchType={this.switchHandler}/>
-                        : <Register switchType={this.switchHandler}/>
-                    }
-                </Card>,
+                <Container>
+                    <Card
+                        className={CardClass}
+                    >
+                        {this.state.isLoginFormDisplayed
+                            ? <Login switchType={this.switchHandler} />
+                            : <Register switchType={this.switchHandler} />
+                        }
+                    </Card>
+                </Container>
             </React.Fragment>
         )
     }
