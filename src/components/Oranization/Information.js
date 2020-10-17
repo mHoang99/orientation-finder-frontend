@@ -5,10 +5,11 @@ import { Timeline, Carousel } from "antd";
 import { ClockCircleOutlined } from "@ant-design/icons";
 import slide4 from "../../assets/image/slide4.jpg";
 import "./information.css";
+import Container from "../UI/Container/Container";
 class Detail extends React.Component {
   render() {
     return (
-      <div>
+      <Container>
         <Row align="middle" justify="center" style={{ marginTop: "40px" }}>
           <Col>
             <Image src={Logo} />
@@ -88,12 +89,9 @@ class Detail extends React.Component {
           </div>
           <div>
             <h2>Courses</h2>
-            {this.state.map((data, index) => (
-              <div></div>
-            ))}
           </div>
         </div>
-      </div>
+      </Container>
     );
   }
 }
