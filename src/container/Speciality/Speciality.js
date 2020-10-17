@@ -18,13 +18,10 @@ class Speciality extends React.Component {
         intro: "",
         grades: [],
         salary: [],
-<<<<<<< HEAD
         flag: "",
         success: false,
-        hiddenFalse: true
-=======
+        hiddenFalse: true,
         point: {}
->>>>>>> e0ae358fa657cdc7d83926c2e7c09a7b15b00596
     }
 
     componentDidMount = () => {
