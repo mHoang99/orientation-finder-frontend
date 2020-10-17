@@ -1,0 +1,27 @@
+.Logo {
+    height: 45px;
+    width: 150px;
+    margin-top: 10px;
+    background-color: black;
+}
+
+.Avatar {
+    padding: 0;
+}
+
+.LoginButton {
+    width: 100px;
+    background-color: blue;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-weight: 700;
+    height: 40px;
+
+}
+
+.RegisterButton{
+    margin-right: 10px;
+    font-weight: 500;
+    color: #4f566b;
+}

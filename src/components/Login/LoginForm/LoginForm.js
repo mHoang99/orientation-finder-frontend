@@ -16,17 +16,15 @@ class LoginForm extends React.Component {
     }
 
     handleFormSubmit = (event) => {
-        event.preventDefault();
-
         this.setState({
             message: "",
             isLoading: true,
         });
 
         AuthService.login(this.state.username, this.state.password).then(
-            () => {
+            (data) => {
                 window.alert("logged in");
-
+                console.log(data);
             },
             error => {
                 const resMessage =
@@ -45,6 +43,18 @@ class LoginForm extends React.Component {
 
     };
 
+    handleEmailChange = (event) => {
+        this.setState({
+            email: event.target.value,
+        });
+    };
+
+    handlePasswordChange = (event) => {
+        this.setState({
+            password: event.target.value,
+        });
+
+    };
 
     onFinishFailed = (error) => {
         console.log('Failed:', error);
@@ -125,7 +135,7 @@ class LoginForm extends React.Component {
                 <Form.Item>
                     <FacebookLogin
                         appId="611857186158857"
-                        autoLoad={true}
+                        // autoLoad={true}
                         fields="name,email,picture"
                         callback={this.responseFacebook}
                         render={renderProps => (

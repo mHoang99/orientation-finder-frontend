@@ -6,7 +6,7 @@ import cssClasses from './Auth.module.css'
 
 class Auth extends React.Component {
     state = {
-        isLoginFormDisplayed: true,
+        isLoginFormDisplayed: this.props.match.params.isRegister == 'true' ? true : false
     }
 
     switchHandler = () => {
@@ -18,7 +18,6 @@ class Auth extends React.Component {
     }
 
     render() {
-
         let CardClasses;
         if (this.state.isLoginFormDisplayed) {
             CardClasses = [cssClasses.AuthCard, cssClasses.Login];
@@ -38,7 +37,6 @@ class Auth extends React.Component {
                         : <Register switchType={this.switchHandler}/>
                     }
                 </Card>,
-
             </React.Fragment>
         )
     }
