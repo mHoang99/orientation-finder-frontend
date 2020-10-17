@@ -1,10 +1,11 @@
 import React from "react";
-import { Button, Col, Row, Modal, Checkbox, message, Image } from "antd";
+import { Button, Col, Row, Modal, Checkbox, message, Image, Alert } from "antd";
 import { CloseOutlined, PlayCircleFilled } from "@ant-design/icons";
 import AI from "../../assets/icons/Artificial Intelligence.svg";
 import CS from "../../assets/icons/Computer Science.svg";
 import GD from "../../assets/icons/Game Developer.svg";
 import "./Modal.css";
+import axios from "axios";
 var validate = (answer, length) => {
   for (var i = 0; i < length; i++) {
     if (!answer[i]) return false;
@@ -17,19 +18,8 @@ export default class Quiz extends React.Component {
     title: "Let do it !!",
 
     index: 0,
-    listQuestion: [
-      { title: "This is question 1", answer: ["always", "often", "never"] },
-      { title: "This is question 2", answer: ["always", "often", "never"] },
-      { title: "This is question 3", answer: ["always", "often", "never"] },
-      { title: "This is question 4", answer: ["always", "often", "never"] },
-      { title: "This is question 5", answer: ["always", "often", "never"] },
-      { title: "This is question 6", answer: ["always", "often", "never"] },
-      { title: "This is question 7", answer: ["always", "often", "never"] },
-      { title: "This is question 8", answer: ["always", "often", "never"] },
-      { title: "This is question 9", answer: ["always", "often", "never"] },
-      { title: "This is question 10", answer: ["always", "often", "never"] },
-    ],
-    answer: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    listQuestion: [],
+    answer: [],
     visible: true,
     isSubmit: -1,
   };
@@ -53,32 +43,68 @@ export default class Quiz extends React.Component {
     });
   };
   handleNext = () => {
-    this.setState({
-      start: false,
-    });
-    if (this.state.isSubmit == 0) {
-      //validate all answer
-      console.log(this.state.answer);
-      let answer = this.state.answer;
-      debugger;
-      if (validate(answer, this.state.listQuestion.length)) {
-        //handle submit answer
-
+    if (!this.state.err) {
+      this.setState({
+        start: false,
+      });
+      if (this.state.isSubmit == 0) {
+        //validate all answer
+        console.log(this.state.answer);
+        let answer = this.state.answer;
+        debugger;
+        if (validate(answer, this.state.listQuestion.length)) {
+          //handle submit answer
+          let data = this.state.answer;
+          const options = {
+            method: "post",
+            url: axios.defaults.baseURL + "quiz/answer",
+            data: data,
+          };
+          axios(options)
+            .then((response) => {
+              console.log(response.data);
+            })
+            .catch((e) => {
+              console.log(e.response);
+            });
+          this.setState({
+            title: "Result",
+            isSubmit: 1,
+          });
+        } else {
+          message.error("Answer all question!");
+        }
+      } else
         this.setState({
-          title: "Result",
-          isSubmit: 1,
+          visible: false,
         });
-      } else {
-        message.error("Answer all question!");
-      }
-    } else
+    } else {
       this.setState({
         visible: false,
       });
+    }
   };
 
   componentDidMount() {
     //get all question and answer, save to listquestion as format of question
+    debugger;
+    const options = {
+      method: "get",
+      url: axios.defaults.baseURL + "quiz/get-all-quiz",
+    };
+    axios(options)
+      .then((response) => {
+        console.log(response.data);
+        this.setState({
+          listQuestion: response.data.listQuiz,
+        });
+      })
+
+      .catch((e) => {
+        this.setState({
+          err: e.response,
+        });
+      });
   }
   render() {
     return (
@@ -147,7 +173,7 @@ export default class Quiz extends React.Component {
                           : "red",
                     }}
                   >
-                    {data.title}
+                    {data.question}
                   </Row>
                   <div
                     className="MarginTop"

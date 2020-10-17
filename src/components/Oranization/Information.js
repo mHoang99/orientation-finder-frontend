@@ -7,6 +7,7 @@ import slide4 from "../../assets/image/slide4.jpg";
 import "./information.css";
 import Container from "../UI/Container/Container";
 import Course from "../Course/Course";
+import axios from "axios";
 class Detail extends React.Component {
   state = {
     data: [
@@ -66,7 +67,12 @@ class Detail extends React.Component {
       },
     ],
   };
-  componentDidMount() {}
+  componentDidMount() {
+    axios
+      .get(axios.defaults.baseURL + "/organization/get-detail?id=1")
+      .then((res) => {})
+      .catch((e) => {});
+  }
   render() {
     return (
       <Container>
