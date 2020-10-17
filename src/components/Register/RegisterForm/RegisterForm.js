@@ -9,9 +9,9 @@ class RegisterForm extends React.Component {
     state = {
         err: "",
         isLoading: false,
-        email: '',
+        email: sessionStorage.getItem('email') ? sessionStorage.getItem('email') : '',
         password: '',
-        name: '',
+        name: sessionStorage.getItem('name') ? sessionStorage.getItem('name') : '',
         phone: '',
         is_loading: false,
         message: "",
@@ -72,11 +72,11 @@ class RegisterForm extends React.Component {
                 response => {
                     console.log(response)
                     // if (response.success) {
-                        this.setState({
-                            message: response.data.message,
-                            successful: true
-                        });
-                        this.props.switchType()
+                    this.setState({
+                        message: response.data.message,
+                        successful: true
+                    });
+                    this.props.switchType()
                     // }
                 }
             )
@@ -125,9 +125,11 @@ class RegisterForm extends React.Component {
                     ]}
                 >
                     <Input
+                        initialValue={this.state.email}
                         size='large'
                         placeholder="Email"
                         onChange={this.handleEmailChange}
+                        value={this.state.email}
                     />
                 </Form.Item>
 
@@ -180,6 +182,7 @@ class RegisterForm extends React.Component {
                     rules={[{ required: true, message: 'Please input your fullname!', whitespace: true }]}
                 >
                     <Input
+                        initialValue={this.state.name}
                         size='large'
                         placeholder="Fullname"
                         onChange={this.handleNameChange}

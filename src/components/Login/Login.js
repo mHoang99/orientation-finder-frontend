@@ -12,7 +12,7 @@ class Login extends React.Component {
                 <div style={{height: "180px", textAlign: 'center'}}>
                     <img src={logo}/>
                 </div>
-                <LoginForm/>
+                <LoginForm switchType={this.props.switchType}/>
                 <p className={cssClasses.DontHaveAccount}>
                     Don't have an account? <a 
                     onClick={this.props.switchType}>Register here</a>

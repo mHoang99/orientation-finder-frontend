@@ -1,3 +1,4 @@
+import { buildQueries } from "@testing-library/react";
 import axios from "axios";
 
 
@@ -18,6 +19,20 @@ class AuthService {
 
     logout() {
         localStorage.removeItem("user");
+    }
+
+    facebookLogin(email) {
+        return axios
+            .post(axios.defaults.baseURL + 'login-facebook', {
+                email
+            })
+            .then(response => {
+                if (response.data.accessToken) {
+                    localStorage.setItem("user", JSON.stringify(response.data));
+                }
+                
+                return response.data;
+            });
     }
 
     register(email, password, name, phone, school) {
