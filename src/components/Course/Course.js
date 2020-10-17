@@ -2,7 +2,7 @@ import React from "react";
 import "./Course.css";
 
 import Logo from "../../assets/image/logo.png";
-import { List, Avatar, Card, Popconfirm, Skeleton,  } from "antd";
+import { List, Avatar, Card, Popconfirm, Skeleton, } from "antd";
 import { StarOutlined } from '@ant-design/icons';
 
 
@@ -42,18 +42,9 @@ class Course extends React.Component {
               <Card
                 className="item-inner"
                 hoverable
-                style={{ marginTop: "20px" }}
-                cover={
-                  <img
-                    alt={item.courseContent}
-                    src={item.coursePicture}
-                    width="100"
-                    height="200"
-                    object-fit="cover"
-                  />
-                }
+                style={{ marginTop: "20px", backgroundImage: `linear-gradient(to bottom right, #5c57ab, #00f1ff)`, borderRadius: `3px` }}
                 actions={[
-                  <StarOutlined />,
+                  <StarOutlined style={{ color: '#4f556b' }} />,
                   <IconText
                     type="bar-chart"
                     text={"Level: " + "1"}
@@ -66,7 +57,7 @@ class Course extends React.Component {
                   />,
                 ]}
               >
-                <Meta
+                <Meta style={{ color: '#fff !important' }}
                   avatar={<Avatar src={Logo} />}
                   title={item.courseContent}
                   description={item.oranizationName}
