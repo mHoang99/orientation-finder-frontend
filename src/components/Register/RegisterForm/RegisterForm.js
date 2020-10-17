@@ -66,7 +66,13 @@ class RegisterForm extends React.Component {
             school: this.state.school
         }
 
-        AuthService.register(data)
+        AuthService.register(
+            this.state.email,
+            this.state.password,
+            this.state.name,
+            this.state.phone,
+            this.state.school
+        )
             .then(
                 response => {
                     console.log(response)

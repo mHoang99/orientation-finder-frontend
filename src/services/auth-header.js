@@ -3,7 +3,7 @@ const authHeader = () => {
 
     if (user && user.accessToken) {
         return {
-            Authorization: "Bearer " + user.accessToken,
+            Authorization: user.accessToken,
         };
     } else {
         return {
