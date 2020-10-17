@@ -4,6 +4,7 @@ import Login from '../../components/Login/Login';
 import Register from '../../components/Register/Register';
 import Container from '../../components/UI/Container/Container';
 import cssClasses from './Auth.module.css'
+import loginBg from '../../assets/bg/login-bg.svg';
 
 class Auth extends React.Component {
     state = {
@@ -30,16 +31,21 @@ class Auth extends React.Component {
 
         return (
             <React.Fragment>
-                <Container>
-                    <Card
-                        className={CardClass}
-                    >
-                        {this.state.isLoginFormDisplayed
-                            ? <Login switchType={this.switchHandler} />
-                            : <Register switchType={this.switchHandler} />
-                        }
-                    </Card>
-                </Container>
+                <div style={{
+                    backgroundImage: `url(${loginBg})`, backgroundRepeat: 'no-repeat',
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'bottom'
+                }}>
+                    <Container >
+                        <Card
+                            className={CardClass}
+                        >
+                            {this.state.isLoginFormDisplayed
+                                ? <Login switchType={this.switchHandler} />
+                                : <Register switchType={this.switchHandler} />
+                            }
+                        </Card>
+                    </Container></div>
             </React.Fragment>
         )
     }

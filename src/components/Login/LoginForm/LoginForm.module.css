@@ -12,30 +12,34 @@
 }
 
 .SubmitButton {
-    background-color: pink;
+    background-color: #F4516C;
     width: calc(50% - 10px);
     border: none;
     animation: popout 1s ease;
     -webkit-animation: popout 1s ease;
     margin-left: 20px;
+    font-weight: bold;
+    color: #fff
+
 }
 
 .SubmitButton:hover {
-    background-color: #f7f7f7;
-    color: pink;
+    background-color: #fff;
+    color:#F4516C;
+    border: solid 1px #F4516C
 }
 
-.FacebookButton {
-    background-color: #15a4fa;
+
+.FacebookButton{
     width: calc(50% - 10px);
-    border: none;
+    background-color: #0476e9;
+    color: #fff;
+    font-weight: bold;
     animation: popout 1s ease;
-    -webkit-animation: popout 1s ease;
 }
-
-.FacebookButton:hover {
-    background-color: #f7f7f7;
-    color: #15a4fa;
+.FacebookButton:hover{
+    background-color: #fff;
+    color: #0476e9;
 }
 
 @keyframes popout {

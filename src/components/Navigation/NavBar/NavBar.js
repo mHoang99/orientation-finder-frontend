@@ -32,9 +32,11 @@ class NavBar extends React.Component {
     render() {
         const menu = (
             <Menu onClick={this.onClick}>
-                <Menu.Item key="1">1st menu item</Menu.Item>
-                <Menu.Item key="2">2nd memu item</Menu.Item>
-                <Menu.Item key="3">3rd menu item</Menu.Item>
+                <Menu.Item key="1">Artificial Intelligence</Menu.Item>
+                <Menu.Item key="2">Computer Science</Menu.Item>
+                <Menu.Item key="3">Game Developer</Menu.Item>
+                <Menu.Item key="4">Security</Menu.Item>
+                <Menu.Item key="5">Web Developer</Menu.Item>
             </Menu>
         );
         return (
@@ -116,16 +118,6 @@ class NavBar extends React.Component {
                             >
                                 Sign in
                         </Button>
-                            {/* <Button
-                                type="primary"
-                                style={{
-                                    width: "100px"
-                                }}
-                                className={cssClasses.LoginButton}
-                                onClick={this.LoginButtonHandler}
-                            >
-                                Sign in
-                                </Button> */}
                         </Col>
                     )
                 }

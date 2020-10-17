@@ -237,7 +237,7 @@ class RegisterForm extends React.Component {
                         block
                         loading={this.state.loading}
                     >
-                        Register
+                        REGISTER
                         </Button>
                 </Form.Item>
             </Form>

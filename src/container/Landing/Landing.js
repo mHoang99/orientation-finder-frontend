@@ -29,7 +29,7 @@ const Landing = (props) => {
                 <Row>
                     <Col xs={{ span: 24 }} lg={{ span: 12, offset: 2 }}>
                         <h1 className={cssClasses.Bold}  style={{ paddingTop: `7rem` }}>For Organization</h1>
-                        <p style={{ marginBottom: `32px`, fontSize: `18px` }}>ESC offers an environment for organizations who want to advertise theirs products, IT courses and students who have passion but don't know a right way to start learning IT. </p>
+                        <p style={{ marginBottom: `32px`, fontSize: `18px` }}>ESC provides an environment for organizations who want to advertise theirs products, IT courses and students who have passion but don't know a right way to start learning IT. </p>
                         <Button className={[cssClasses.PartnerButton, cssClasses.Bold].join(' ')}
                             shape='round'
                             htmlType="submit"
@@ -47,7 +47,7 @@ const Landing = (props) => {
                 <span> 1 month since the launch, ESC has put up impressive numbers</span>
                 <Row>
                     <Col xs={{ span: 24, offset: 1 }} lg={{ span: 7, offset: 1 }}>
-                        <h1 className={cssClasses.Bold} style={{ marginBottom: `10px` }}> 50</h1>
+                        <h1 className={cssClasses.Bold} style={{ marginBottom: `10px` }}> 100</h1>
                         <span> courses created</span>
                     </Col>
                     <Col xs={{ span: 24, offset: 1 }} lg={{ span: 7, offset: 1 }}>

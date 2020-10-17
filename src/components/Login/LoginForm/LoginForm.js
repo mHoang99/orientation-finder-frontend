@@ -139,25 +139,22 @@ class LoginForm extends React.Component {
                         fields="name,email,picture"
                         callback={this.responseFacebook}
                         render={renderProps => (
-                            <Button
-                                className={cssClasses.FacebookButton}
-                                type="primary"
+                            <Button className={[cssClasses.FacebookButton, cssClasses.Bold].join(' ')}
                                 shape='round'
+                                htmlType="submit"
                                 size='large'
-                                block
-                                loading={this.state.loading}
                                 onClick={renderProps.onClick}
+                                loading={this.state.loading}
                             >
                                 FACEBOOK
                             </Button>
                         )}
                     />
-                    <Button className={cssClasses.SubmitButton}
+                    <Button className={[cssClasses.SubmitButton, cssClasses.Bold].join(' ')}
                         type="primary"
                         shape='round'
                         htmlType="submit"
                         size='large'
-                        block
                         loading={this.state.loading}
                     >
                         LOGIN
