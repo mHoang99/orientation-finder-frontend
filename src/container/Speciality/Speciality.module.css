@@ -1,14 +1,31 @@
 .Title {
-    padding-top: 30px;
-    margin-bottom: 5px;
+  padding-top: 30px;
+  margin-bottom: 5px;
 }
 
 .Compatible {
-    color: #4f566b;
-    margin-right: 0px;
+  color: #4f566b;
+  margin-right: 0px;
 }
 
 .HeadingDivider {
-    font-size: "30px"; 
-    font-weight: "bold";
+  font-size: "30px";
+  font-weight: "bold";
+}
+
+.ChatHint {
+  padding: 10px;
+}
+.Even {
+  margin: 1rem;
+  text-align: left;
+}
+.Odd {
+  margin: 1rem;
+  text-align: right;
+}
+
+.TryItOut {
+  width: 50%;
+  margin: 0 auto;
 }

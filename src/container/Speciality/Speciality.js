@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactPlayer from 'react-player'
-import { Col, Row, Progress, Card, Divider, Button } from 'antd';
+import { Col, Row, Progress, Card, Divider, Button,Input, Alert } from 'antd';
 import cssClasses from './Speciality.module.css'
 import './Speciality.css'
 import FeeAndScore from '../../components/Table/FeeAndScoreTable/FeeAndScore'
@@ -18,6 +18,9 @@ class Speciality extends React.Component {
         intro: "",
         grades: [],
         salary: [],
+        flag: "",
+        success: false,
+        hiddenFalse: true
     }
 
     componentDidMount = () => {
@@ -43,7 +46,26 @@ class Speciality extends React.Component {
             )
         // console.log(JSON.parse(localStorage.getItem('user')))
     }
-
+    handleSubmitFlag = (e)=>{
+        e.preventDefault();
+        if(this.state.flag ==="flag{w3lc0me_t0_s3cur1ty}"){
+            this.setState({
+                success: true,
+                hiddenFalse: true
+            })
+        }
+        else{
+            this.setState({
+                hiddenFalse: false
+            })
+        }
+    }
+    onChangeInput = (e)=>{
+        this.setState({
+            flag:e.target.value
+        })
+        // console.log(e.target.value)
+    }
     render() {
         return (
             <React.Fragment>
@@ -86,13 +108,30 @@ class Speciality extends React.Component {
                         </Col>
                     </Row>
                     <Divider style={{ fontSize: "30px", fontWeight: "bold", width: "calc(50% - 45px)", color: "#4f566b", margin: "50px 0" }}>WARM UP</Divider>
-                    <Row>
+                    <Row >
                         <Col span={12}>
-                            <a href="/robots.txt" target="new">enter</a>
+                            <Row>
+                                <a className={cssClasses.TryItOut} href="/robots.txt" target="new">Try It Out</a>
+                            </Row>
+                            <Row>
+                                <Input placeholder="Input flag here" onChange={this.onChangeInput}/>
+                                <Button type="primary" htmlType="submit" onClick={this.handleSubmitFlag}>
+                                    Submit
+                                </Button>
+                                {this.state.success?(<Alert message="Congratulation" type="success" />):(<></>)}
+                                {!this.state.hiddenFalse?(<Alert message="Try Again" type="error" />):(<></>)}
+                            </Row>
                         </Col>
-                        <Col span={12}></Col>
+                        <Col span={12} className={cssClasses.chatHint}>
+                            <h1 style={{ marginBottom:"2.5rem",padding:'10px',textAlign:"center" }}>Welcome to Cyber Security!</h1>
+                            <p className={cssClasses.Odd}>- Let begin with a amazing capture the flag challenge</p>
+                            <p className={cssClasses.Even}>- Have you ever heard about "robots.txt"?</p>
+                            <p className={cssClasses.Odd}>- Let try it on our site</p>
+                            <p className={cssClasses.Even}>- Forbiden Land??</p>
+                            <p className={cssClasses.Odd}>- Press Ctrl+U </p>
+                        </Col>
                     </Row>
-                    <div style={{ height: "500px" }}></div>
+                    <div style={{ height: "75px" }}></div>
 
                     <Divider style={{ fontSize: "30px", fontWeight: "bold", width: "calc(50% - 45px)", color: "#4f566b", margin: "50px 0" }}>COURSES</Divider>
                     <Course data={this.state.coursesData} />

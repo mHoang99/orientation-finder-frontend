@@ -1,17 +1,20 @@
-
-#progressCircle > .ant-progress-inner.ant-progress-circle-gradient{
-    width: 200px !important;
-    height: 200px !important;
-    font-size: 40px !important;
+#progressCircle > .ant-progress-inner.ant-progress-circle-gradient {
+  width: 200px !important;
+  height: 200px !important;
+  font-size: 40px !important;
 }
 
 .bold {
-    font-weight: bold;
+  font-weight: bold;
 }
-.ant-row-space-around .ant-card-body{ padding: 0}
+.ant-row-space-around .ant-card-body {
+  padding: 0;
+}
 
 .ant-table-pagination.ant-pagination {
-    margin: 16px 10px;
+  margin: 16px 10px;
 }
 
-.ant-table-thead > tr > th {font-weight: bold;}
+.ant-table-thead > tr > th {
+  font-weight: bold;
+}
