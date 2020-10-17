@@ -29,6 +29,7 @@ const App = () => {
           <Route path="/organization/:id" component={Detail} />
           <Route path="/" exact component={Landing} />
           <Route path="/abc" exact component={ABC} />
+          <Route path="/categories" exact component={Categories} />
           <Route render={() => <h1>Not found</h1>} />
         </Switch>
         {window.location.href !== `${url}/quiz` ? <Footer /> : null}

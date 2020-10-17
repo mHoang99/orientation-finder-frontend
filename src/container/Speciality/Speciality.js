@@ -19,9 +19,6 @@ class Speciality extends React.Component {
         intro: "",
         grades: [],
         salary: [],
-        flag: "",
-        success: false,
-        hiddenFalse: true,
         point: {}
     }
 
@@ -49,26 +46,7 @@ class Speciality extends React.Component {
             )
         // console.log(JSON.parse(localStorage.getItem('user')))
     }
-    handleSubmitFlag = (e)=>{
-        e.preventDefault();
-        if(this.state.flag ==="flag{w3lc0me_t0_s3cur1ty}"){
-            this.setState({
-                success: true,
-                hiddenFalse: true
-            })
-        }
-        else{
-            this.setState({
-                hiddenFalse: false
-            })
-        }
-    }
-    onChangeInput = (e)=>{
-        this.setState({
-            flag:e.target.value
-        })
-        // console.log(e.target.value)
-    }
+   
     render() {
         let p = (this.state.point.userPoint/this.state.point.maxPoint*100).toFixed(0);
         p = isNaN(p) ? 0 : p 
