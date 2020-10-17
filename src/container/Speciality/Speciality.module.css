@@ -1,3 +1,13 @@
-.container{
-    padding: 0 15%;
+.Container{
+    padding: 40px 15%;    
+}
+
+.Title{
+    padding-Top: 30px;
+    margin-bottom: 5px; 
+}
+
+.Compatible{
+    color: grey;
+    margin-right: 0px;
 }
