@@ -93,31 +93,31 @@ class Detail extends React.Component {
             <Col lg={12} style={{ marginTop: "20px", fontSize: "18px" }}>
               <Timeline mode="alternate">
                 <Timeline.Item>
-                  <h3>Create a services site 2015-09-01</h3>
+                  <h2>Create a services site 2015-09-01</h2>
                 </Timeline.Item>
                 <Timeline.Item color="green">
-                  <h3>Solve initial network problems 2015-09-01</h3>
+                  <h2>Solve initial network problems 2015-09-01</h2>
                 </Timeline.Item>
                 <Timeline.Item
                   dot={<ClockCircleOutlined style={{ fontSize: "16px" }} />}
                 >
-                  <h3>
+                  <h2>
                     Sed ut perspiciatis unde omnis iste natus error sit
                     voluptatem accusantium doloremque laudantium, totam rem
-                    aperiam, eaque ipsa quae ab illo inventore veritatis et
+                    aperiam, eaque ipsa quae ab illo ih2nventore veritatis et
                     quasi architecto beatae vitae dicta sunt explicabo.
-                  </h3>
+                  </h2>
                 </Timeline.Item>
                 <Timeline.Item color="red">
-                  <h3>Network problems being solved 2015-09-01</h3>
+                  <h2>Network problems being solved 2015-09-01</h2>
                 </Timeline.Item>
                 <Timeline.Item>
-                  <h3>Create a services site 2015-09-01</h3>
+                  <h2>Create a services site 2015-09-01</h2>
                 </Timeline.Item>
                 <Timeline.Item
                   dot={<ClockCircleOutlined style={{ fontSize: "16px" }} />}
                 >
-                  <h3> Technical testing 2015-09-01</h3>
+                  <h2> Technical testing 2015-09-01</h2>
                 </Timeline.Item>
               </Timeline>
             </Col>
@@ -130,6 +130,7 @@ class Detail extends React.Component {
               justify="center"
               style={{
                 marginTop: "20px",
+                marginBottom: "20px",
                 fontSize: "30px",
                 fontWeight: "bold",
               }}
@@ -137,13 +138,7 @@ class Detail extends React.Component {
               Courses
             </Row>
 
-            <Row justify="start">
-              {this.state.data.map((data, index) => (
-                <Col lg={7} style={{ margin: " 20px 25px" }}>
-                  <Course data={data} />
-                </Col>
-              ))}
-            </Row>
+            <Course data={this.state.data} />
           </div>
           <div>
             <Row
@@ -159,17 +154,29 @@ class Detail extends React.Component {
             <Row justify="space-around">
               <Col>
                 <Row>
-                  6 floor, Chigamex building 22C Thanh Cong, Ba Đình, HN
-                  02477705666
+                  <h2>
+                    6 floor, Chigamex building 22C Thanh Cong, Ba Đình, HN
+                    02477705666
+                  </h2>
                 </Row>
-                <Row> 2 floor, 29T1 Hoang Dao Thuy, HN 02477702666</Row>
-                <Row>6 floor, Nguyen Phong Sac 107 N, HN 02477703666</Row>
+                <Row>
+                  <h2>2 floor, 29T1 Hoang Dao Thuy, HN 02477702666</h2>
+                </Row>
+                <Row>
+                  <h2> 6 floor, Nguyen Phong Sac 107 N, HN 02477703666</h2>
+                </Row>
               </Col>
               <Col>
-                <Row> 5 floor , 71 Nguyen Chi Thanh, HN 02477704666</Row>
+                <Row>
+                  {" "}
+                  <h2>5 floor , 71 Nguyen Chi Thanh, HN 02477704666</h2>
+                </Row>
 
                 <Row>
-                  4 floor, 505 Minh Khai, Hai Ba Trung distric, HN 02477707666
+                  <h2>
+                    {" "}
+                    4 floor, 505 Minh Khai, Hai Ba Trung distric, HN 02477707666
+                  </h2>
                 </Row>
               </Col>
             </Row>
