@@ -14,7 +14,8 @@ const Header = (props) => {
                 paddingLeft: "2vw",
                 paddingRight: "2vw",
                 height: "70px",
-                backgroundColor: "white"
+                backgroundColor: "white",
+                position: 'fixed'
             }}
             className={cssClasses.Header}
         >
