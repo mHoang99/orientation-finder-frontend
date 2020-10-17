@@ -53,7 +53,6 @@ class SalaryTable extends React.Component {
                 <Card className={cssClasses.container}>
                     <Table columns={columns} dataSource={data} />
                 </Card>,
-
             </React.Fragment >
         )
     }
