@@ -6,7 +6,7 @@ import './Speciality.css'
 import FeeAndScore from '../../components/Table/FeeAndScoreTable/FeeAndScore'
 import SalaryTable from '../../components/Table/SalaryTable/SalaryTable'
 import Container from '../../components/UI/Container/Container';
-import Course from '../../components/Course/Course';
+import CourseM from '../../components/CourseM/CourseM';
 import axios from 'axios'
 import DataService from '../../services/data.service';
 import WarmUp from '../../components/WarmUp/WarmUp';
@@ -97,7 +97,7 @@ class Speciality extends React.Component {
                     <div style={{ height: "75px" }}></div>
 
                     <Divider style={{ fontSize: "30px", fontWeight: "bold", width: "calc(50% - 45px)", color: "#4f566b", margin: "50px 0" }}>COURSES</Divider>
-                    <Course
+                    <CourseM
                         data={this.state.coursesData}                                    
                     />
                 </Container>

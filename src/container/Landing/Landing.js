@@ -15,7 +15,11 @@ class Landing extends React.Component {
     });
   };
   openModal = () => {
-    this.setState({ visible: true });
+      if(localStorage.getItem('accessToken')) {
+        this.setState({ visible: true });
+      } else {
+          window.location.href = "http://localhost:3000/auth/true"
+      }
   };
   render() {
     return (

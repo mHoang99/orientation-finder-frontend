@@ -36,8 +36,8 @@ class NavBar extends React.Component {
             <Menu onClick={this.onClick}>
                 <Menu.Item key="1">Artificial Intelligence</Menu.Item>
                 <Menu.Item key="2">Computer Science</Menu.Item>
-                <Menu.Item key="3">Game Developer</Menu.Item>
-                <Menu.Item key="4">Security</Menu.Item>
+                <Menu.Item key="3">Cyber Security</Menu.Item>
+                <Menu.Item key="4">Game Developer</Menu.Item>
                 {/* <Menu.Item key="5">Web Developer</Menu.Item> */}
             </Menu>
         );
@@ -63,14 +63,14 @@ class NavBar extends React.Component {
                         </Dropdown>
                     </Col>
                     <Col style={{ marginLeft: '20px' }}>
-                        <a className="ant-dropdown-link" onClick={(e) => e.preventDefault()}>
+                        <a className="ant-dropdown-link" href='http://localhost:3000/organizations'>
                             Organizations
-          </a>
+                        </a>
                     </Col>
                     <Col style={{ marginLeft: '20px' }}>
                         <a className="ant-dropdown-link" onClick={(e) => e.preventDefault()}>
                             Help Center
-          </a>
+                        </a>
                     </Col>
                 </Col>
                 {this.state.currentUser ? (
@@ -94,7 +94,7 @@ class NavBar extends React.Component {
                                         }}
                                     >
                                         Favourite courses
-                  </Menu.Item>
+                                    </Menu.Item>
                                     <Menu.Item
                                         align="left"
                                         style={{
@@ -103,7 +103,7 @@ class NavBar extends React.Component {
                                         onClick={this.LogoutHandler}
                                     >
                                         Logout
-                  </Menu.Item>
+                                    </Menu.Item>
                                 </Menu>
                             }
                             placement="bottomRight"
@@ -125,7 +125,7 @@ class NavBar extends React.Component {
                                 onClick={this.RegisterButtonHandler}
                             >
                                 Register
-            </Button>
+                             </Button>
                             <Button
                                 className={[cssClasses.LoginButton, cssClasses.Bold].join(" ")}
                                 shape="round"
@@ -134,7 +134,7 @@ class NavBar extends React.Component {
                                 onClick={this.LoginButtonHandler}
                             >
                                 Sign in
-            </Button>
+                            </Button>
                         </Col>
                     )}
             </Row>

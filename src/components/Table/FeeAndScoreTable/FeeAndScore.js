@@ -21,7 +21,7 @@ const columns = [
         sortDirections: ['descend', 'ascend'],
     },
     {
-        title: 'Tution Fees',
+        title: 'Tution Fees (VND)',
         dataIndex: 'fee',
         key: 'fee',
         sorter: (a, b) => a.fee - b.fee,
@@ -35,6 +35,13 @@ const columns = [
 
 class FeeAndScore extends React.Component {
 
+    numberWithCommas = (value) => {
+        if (Number.isInteger(value)) {
+            return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        }
+        return value;
+    }
+
     render() {
         let data = [];
         this.props.list.forEach(
@@ -43,9 +50,9 @@ class FeeAndScore extends React.Component {
                     key: index + 1,
                     name: value.name,
                     grade: value.grade,
-                    fee: value.tuitionFeePerYear,
+                    fee: this.numberWithCommas(value.tuitionFeePerYear),
                 })
-            }           
+            }
         )
 
         return (

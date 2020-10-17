@@ -81,13 +81,11 @@ class WarmUp extends React.Component {
                   <a
                     className={cssClasses.TryItOut}
                     href="/robots.txt"
-                    target="new"
+                    target='_blank'
                   >
                     <img
                       style={{ width: "250px" }}
                       src={tryIcon}
-                      href="/robots.txt"
-                      target="new"
                     />
                   </a>
                 </Row>
