@@ -28,7 +28,7 @@ export default class Quiz extends React.Component {
     ],
     answer: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
     visible: true,
-    isSubmit: -1,
+    isSubmit: 1,
   };
   handleCheckbox = (checkedValues) => {
     console.log("check :", checkedValues.target.name);
@@ -95,8 +95,8 @@ export default class Quiz extends React.Component {
             this.state.isSubmit == -1
               ? "40%"
               : this.state.isSubmit == 0
-              ? "80%"
-              : "65%"
+              ? "75%"
+              : "50%"
           }
           bodyStyle={{
             overflowY: this.state.isSubmit == 0 ? "auto" : "unset",
@@ -182,15 +182,19 @@ class Result extends React.Component {
   };
   render() {
     return (
-      <Row justify="space-around">
+      <Row
+        justify="space-around"
+        alignItems="center"
+        style={{ height: "inherit" }}
+      >
         {this.state.result.map((data, index) => (
-          <Col>
+          <Col align="middle">
             <Row>
               <Button type="primary" shape="circle">
                 {this.state.icon[index]}
               </Button>
             </Row>
-            <Row justify="center">
+            <Row justify="center" className="MarginTop">
               <span>{data}</span>
             </Row>
           </Col>
