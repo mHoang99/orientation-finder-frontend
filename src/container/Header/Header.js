@@ -11,8 +11,7 @@ const Header = (props) => {
             style={{
                 zIndex: 1,
                 width: '100%',
-                paddingLeft: "2vw",
-                paddingRight: "2vw",
+                padding: '0 8.3%',
                 height: "70px",
                 backgroundColor: "white",
                 position: 'fixed'

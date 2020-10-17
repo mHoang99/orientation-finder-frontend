@@ -1,14 +1,9 @@
 import React from "react";
 import "./Course.css";
 
-import { Button, Col, Row, Modal, Checkbox, message, Image } from "antd";
 import Logo from "../../assets/image/logo.png";
-import { Timeline, Carousel } from "antd";
-import { ClockCircleOutlined } from "@ant-design/icons";
-import slide1 from "../../assets/image/slide1.png";
-import logo from "../../assets/image/logo.jpeg";
-import Container from "../UI/Container/Container";
 import { List, Avatar, Card, Popconfirm, Skeleton } from "antd";
+import { StarOutlined } from "@ant-design/icons";
 
 const { Meta } = Card;
 
@@ -51,18 +46,13 @@ class Course extends React.Component {
               <Card
                 className="item-inner"
                 hoverable
-                style={{ marginTop: "20px" }}
-                cover={
-                  <img
-                    alt={item.courseContent}
-                    src={item.coursePicture}
-                    width="100"
-                    height="200"
-                    object-fit="cover"
-                  />
-                }
+                style={{
+                  marginTop: "20px",
+                  backgroundImage: `linear-gradient(to bottom right, #5c57ab, #00f1ff)`,
+                  borderRadius: `3px`,
+                }}
                 actions={[
-                  <IconText type="like" text={`Test`} key="upvote" />,
+                  <StarOutlined style={{ color: "#4f556b" }} />,
                   <IconText
                     type="bar-chart"
                     text={"Level: " + "1"}
@@ -76,6 +66,7 @@ class Course extends React.Component {
                 ]}
               >
                 <Meta
+                  style={{ color: "#fff !important" }}
                   avatar={<Avatar src={this.props.logo} />}
                   title={item.courseContent}
                   description={this.props.oranizationName}
