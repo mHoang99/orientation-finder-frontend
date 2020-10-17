@@ -8,7 +8,6 @@ const Header = (props) => {
     return (
         <Layout.Header
             style={{
-                border: "1px solid",
                 zIndex: 1,
                 width: '100%',
                 paddingLeft: "2vw",

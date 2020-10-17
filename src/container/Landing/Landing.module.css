@@ -1,0 +1,60 @@
+.Header {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    min-height: 700px;
+}
+
+.text-white,
+.ContentHeader>* {
+    color: #fff !important;
+    text-align: center;
+}
+
+h1 {
+    font-size: 48px;
+    line-height: 55px;
+    padding-top: 4rem;
+    margin-bottom: 2rem;
+}
+
+.ContentHeader {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.Bold {
+    font-weight: bold;
+}
+
+.QuizButton, .PartnerButton {
+    min-width: 200px;
+    height: 50px !important;
+    font-size: 18px !important;
+}
+
+.QuizButton{
+    color: #4f556b;
+}
+
+.QuizButton:hover {
+    color: #0476e9;
+}
+
+.PartnerButton{
+    background-color: #0476e9;
+    color: #fff;
+}
+.PartnerButton:hover{
+    background-color: #1d84eb;
+    color: #fff;
+}
+
+.Statistic {
+    text-align: center;
+}
+
+.ant-col-xs-24 > h1{
+    padding-top: 2rem
+}
+.Statistic span {font-size: 18px}

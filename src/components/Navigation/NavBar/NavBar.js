@@ -2,6 +2,7 @@ import React from 'react';
 import { Row, Col, Dropdown, Menu, Avatar, Button } from 'antd';
 import cssClasses from './NavBar.module.css'
 import { DownOutlined } from '@ant-design/icons';
+import logo from '../../../assets/icons/logo.png';
 
 class NavBar extends React.Component {
     state = {
@@ -31,7 +32,7 @@ class NavBar extends React.Component {
                 style={{ backgroundColor: "white" }}
             >
                 <Col>
-                    <div className={cssClasses.Logo} />
+                <img src={logo} style={{height: `40px`}}/>
                 </Col>
                 <Col>
                     <Dropdown overlay={menu}>
