@@ -13,19 +13,3 @@
   font-weight: "bold";
 }
 
-.ChatHint {
-  padding: 10px;
-}
-.Even {
-  margin: 1rem;
-  text-align: left;
-}
-.Odd {
-  margin: 1rem;
-  text-align: right;
-}
-
-.TryItOut {
-  width: 50%;
-  margin: 0 auto;
-}

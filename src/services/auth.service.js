@@ -21,6 +21,8 @@ class AuthService {
         localStorage.removeItem("accessToken");
     }
 
+    
+
     facebookLogin(email) {
         return axios
             .post(axios.defaults.baseURL + 'login-facebook', {
