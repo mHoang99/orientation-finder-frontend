@@ -1,0 +1,9 @@
+.Header {
+    z-Index: 1;
+    width: 100%;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    height: 70px;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}

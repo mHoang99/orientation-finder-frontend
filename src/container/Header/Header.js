@@ -1,6 +1,7 @@
 import React from 'react';
 import NavBar from '../../components/Navigation/NavBar/NavBar';
-import {Layout}from 'antd';
+import { Layout } from 'antd';
+import cssClasses from './Header.module.css'
 
 
 
@@ -14,7 +15,9 @@ const Header = (props) => {
                 paddingRight: "2vw",
                 height: "70px",
                 backgroundColor: "white"
-            }}>
+            }}
+            className={cssClasses.Header}
+        >
             <NavBar />
         </Layout.Header>
     );

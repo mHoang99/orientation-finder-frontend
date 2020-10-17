@@ -6,17 +6,27 @@ import logo from '../../../assets/icons/logo.png';
 
 class NavBar extends React.Component {
     state = {
-        currentUser: {
-            id: 1,
-            is_admin: false,
-        }
-        // currentUser: localStorage.user
+        // currentUser: {
+        //     id: 1,
+        //     is_admin: false,
+        // }
+        currentUser: localStorage.user
     }
 
 
     onClick = ({ key }) => {
         console.log(`Click on item ${key}`);
     };
+
+    LoginButtonHandler = () => {
+        window.location.href = '/auth/true'
+    }
+
+    RegisterButtonHandler = () => {
+        window.location.href = '/auth/false'
+    }
+
+
 
     render() {
         const menu = (
@@ -55,13 +65,7 @@ class NavBar extends React.Component {
                         </a>
                     </Dropdown>
                 </Col>
-                <Col>
-                    <Dropdown overlay={menu}>
-                        <a className="ant-dropdown-link" onClick={e => e.preventDefault()}>
-                            Hover me, Click menu item <DownOutlined />
-                        </a>
-                    </Dropdown>
-                </Col>
+
                 {this.state.currentUser ? (
                     <Col span={6} align="end">
                         <Dropdown
@@ -101,11 +105,22 @@ class NavBar extends React.Component {
                 ) : (
                         <Col span={6} align="right">
                             <Button
-                                style={{ marginRight: "1vw" }}
+                                className={cssClasses.RegisterButton}
+                                type="link"
+                                onClick={this.RegisterButtonHandler}
                             >
                                 Register
                             </Button>
-                            <Button>Login</Button>
+                            <Button
+                                type="primary"
+                                style={{
+                                    width: "100px"
+                                }}
+                                className={cssClasses.LoginButton}
+                                onClick={this.LoginButtonHandler}
+                            >
+                                Sign in
+                                </Button>
                         </Col>
                     )
                 }
