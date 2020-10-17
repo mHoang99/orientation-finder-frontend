@@ -9,6 +9,7 @@ import CreateCourse from "./container/CreateCourse/CreateCourse";
 import Speciality from "./container/Speciality/Speciality";
 import Header from "./container/Header/Header";
 import Detail from "./components/Organization/Information";
+import ListOrg from "./components/Organization/listOrganization";
 import Footer from "./container/Footer/Footer";
 import ABC from "./container/ABC/ABC";
 import Categories from "./container/Categories/Categories";
@@ -16,7 +17,6 @@ import Categories from "./container/Categories/Categories";
 const url = "localhost:3000";
 
 const App = () => {
-
     return (
         <BrowserRouter>
             <Layout style={{ backgroundColor: "white" }}>
@@ -26,6 +26,7 @@ const App = () => {
                     <Route path="/speciality/:sid" component={Speciality} />
                     <Route path="/auth/:isRegister" component={Auth} />
                     <Route path="/organization/:id" component={Detail} />
+                    <Route path="/organizations" exact component={ListOrg} />
                     <Route path="/" exact component={Landing} />
                     <Route path="/abc" exact component={ABC} />
                     <Route path="/categories" exact component={Categories} />

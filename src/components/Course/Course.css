@@ -4,13 +4,17 @@
   border-radius: 50%;
 }
 
-.ant-card-actions > li , .ant-card-actions > li > span:hover {
+.ant-card-actions > li,
+.ant-card-actions > li > span:hover {
   color: #4f556b;
 }
 
 .ant-card-meta-detail > * {
   color: #fff;
 }
-.ant-card-meta-detail> :first-child {
+.ant-card-meta-detail > :first-child {
   font-weight: bold;
+}
+a.xxx {
+  cursor: pointer;
 }
