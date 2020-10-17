@@ -1,15 +1,43 @@
 import React from 'react';
 import ReactPlayer from 'react-player'
-import SalaryTable from '../../components/Table/SalaryTable/SalaryTable';
-import FeeAndScore from '../../components/Table/FeeAndScoreTable/FeeAndScore';
-import { Col, Row, Progress, Card, Space, Divider } from 'antd';
+import { Col, Row, Progress, Card, Divider } from 'antd';
 import cssClasses from './Speciality.module.css'
 import './Speciality.css'
+import FeeAndScore from '../../components/Table/FeeAndScoreTable/FeeAndScore'
+import SalaryTable from '../../components/Table/SalaryTable/SalaryTable'
 import Container from '../../components/UI/Container/Container';
+import Course from '../../components/Course/Course';
+import axios from 'axios'
+import DataService from '../../services/data.service';
 
 class Speciality extends React.Component {
     state = {
-        sid: this.props.match.params.sid
+        sid: this.props.match.params.sid,
+        coursesData: [],
+        name: "",
+        intro: ""
+    }
+
+    componentDidMount = () => {
+        DataService.getCategoryDetails(this.state.sid)
+            .then(
+                (res) => {
+                    if (res.data.success) {
+                        console.log(res.data)
+                        this.setState({
+                            coursesData: res.data.category.courses,
+                            name: res.data.category.name,
+                            intro: res.data.category.intro
+                        })
+                    }
+                }
+            )
+            .catch(
+                e => {
+                    console.log(e.response)
+                }
+            )
+        // console.log(JSON.parse(localStorage.getItem('user')))
     }
 
     render() {
@@ -22,7 +50,7 @@ class Speciality extends React.Component {
                         <Card style={{ border: "none" }}>
                             <Row style={{ paddingBottom: "30px" }}>
                                 <Col align="end" style={{ padding: "30px" }}>
-                                    <h1 className={cssClasses.Title}>ARTIFICIAL INTELLIGENT</h1>
+                                    <h1 className={cssClasses.Title}>{this.state.name.toUpperCase()}</h1>
                                     <h3 className={cssClasses.Compatible}>Compatible Level</h3>
                                 </Col>
                                 <Col>
@@ -62,10 +90,7 @@ class Speciality extends React.Component {
                     </Row>
                     <div style={{ height: "500px" }}></div>
                     <Divider style={{ fontSize: "30px", fontWeight: "bold", width: "calc(50% - 45px)", color: "grey" }}>COURSES</Divider>
-                    <Row>
-                        <Col span={12}></Col>
-                        <Col span={12}></Col>
-                    </Row>
+                    <Course data={this.state.coursesData} />
                 </Container>
             </React.Fragment>
         )

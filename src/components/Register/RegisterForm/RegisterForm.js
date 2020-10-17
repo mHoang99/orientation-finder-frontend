@@ -58,14 +58,6 @@ class RegisterForm extends React.Component {
             successful: false
         });
 
-        const data = {
-            email: this.state.email,
-            password: this.state.password,
-            name: this.state.name,
-            phone: this.state.phone,
-            school: this.state.school
-        }
-
         AuthService.register(
             this.state.email,
             this.state.password,

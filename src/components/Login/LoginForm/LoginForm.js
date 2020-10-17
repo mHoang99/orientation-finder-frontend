@@ -25,6 +25,17 @@ class LoginForm extends React.Component {
             (data) => {
                 window.alert("logged in");
                 console.log(data);
+                let user = {
+                    ...data.user,
+                    accessToken: data.jwtToken
+                }
+                localStorage.setItem(
+                    'user', data.user
+                )
+                localStorage.setItem(
+                    'accessToken', data.jwtToken
+
+                )
             },
             error => {
                 const resMessage =
