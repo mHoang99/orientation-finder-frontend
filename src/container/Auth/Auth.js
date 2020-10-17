@@ -6,7 +6,7 @@ import cssClasses from './Auth.module.css'
 
 class Auth extends React.Component {
     state = {
-        isLoginFormDisplayed: true,
+        isLoginFormDisplayed: this.props.register ? false : true,
     }
 
     switchHandler = () => {

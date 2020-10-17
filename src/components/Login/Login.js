@@ -11,8 +11,7 @@ class Login extends React.Component {
                 <div style={{height: "380px"}}>HEADER</div>
                 <LoginForm/>
                 <p className={cssClasses.DontHaveAccount}>
-                    Don't have an account? <a
-                    href="/#" 
+                    Don't have an account? <a 
                     onClick={this.props.switchType}>Register here</a>
                 </p>
             </div>
