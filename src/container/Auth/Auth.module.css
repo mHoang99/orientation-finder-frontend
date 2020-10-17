@@ -1,5 +1,5 @@
 .AuthCard{
-    padding: 30px 100px 50px 100px;
+    padding: 20px 50px 20px 50px;
     align-content: center;
     width: 35vw;
     max-width: 800px;
@@ -15,5 +15,5 @@
 }
 
 .Login {
-    transform: translateX(100vw) translateX(-100%);
+    transform: translateX(70vw) translateX(-100%);
 }

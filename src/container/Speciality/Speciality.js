@@ -45,7 +45,7 @@ class Speciality extends React.Component {
                     <Row justify="center" >
                         <ReactPlayer controls="true" url='https://www.youtube.com/watch?v=ysz5S6PUM-U' width="calc(100% - 45px)" height="40vw" />
                     </Row>
-                    <Divider style={{ fontSize: "30px", fontWeight: "bold", width: "calc(100% - 45px)" }}>STATISTICS</Divider>
+                    <Divider style={{ fontSize: "30px", fontWeight: "bold", width: "calc(100% - 45px)", color: "grey" }}>STATISTICS</Divider>
 
                     <Row justify='space-around'>
                         <Col span={12}>
@@ -55,8 +55,17 @@ class Speciality extends React.Component {
                             <FeeAndScore />
                         </Col>
                     </Row>
-                    <Divider style={{ fontSize: "30px", fontWeight: "bold", width: "calc(50% - 45px)" }}>COURSES</Divider>
-
+                    <Divider style={{ fontSize: "30px", fontWeight: "bold", width: "calc(50% - 45px)", color: "grey" }}>WARM UP</Divider>
+                    <Row>
+                        <Col span={12}></Col>
+                        <Col span={12}></Col>
+                    </Row>
+                    <div style={{ height: "500px" }}></div>
+                    <Divider style={{ fontSize: "30px", fontWeight: "bold", width: "calc(50% - 45px)", color: "grey" }}>COURSES</Divider>
+                    <Row>
+                        <Col span={12}></Col>
+                        <Col span={12}></Col>
+                    </Row>
                 </Container>
             </React.Fragment>
         )
