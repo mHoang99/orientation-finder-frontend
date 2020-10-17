@@ -19,8 +19,9 @@ class Categories extends React.Component {
     dataService
       .getListOrg()
       .then((re) => {
+        console.log(re);
         this.setState({
-          data: re.data,
+          data: re.data.organizations,
         });
       })
       .catch((e) => {
@@ -35,26 +36,28 @@ class Categories extends React.Component {
           <h1 style={{ textAlign: "center", fontWeight: "bold" }}>
             Organization
           </h1>
+
           {this.state.data.map((data, index) => (
-            <Divider
-              orientation="left"
-              style={{
-                fontSize: "30px",
-                fontWeight: "bold",
-                width: "calc(50% - 45px)",
-                color: "#4f566b",
-                margin: "50px 0",
-              }}
-            >
-              <Link to={"/organization/" + data.oranizationId}>
-                {data.name}
-              </Link>
+            <div id="org">
+              <Divider
+                orientation="left"
+                style={{
+                  fontSize: "30px",
+                  fontWeight: "bold",
+                  width: "calc(50% - 45px)",
+                  color: "#4f566b",
+                  margin: "20px 0",
+                }}
+              >
+                <Link to={"/organization/" + data.id}>{data.name}</Link>
+              </Divider>
               <Course
                 data={data.courses}
                 logo={data.logo}
                 oranizationName={data.name}
+                id={data.id}
               />
-            </Divider>
+            </div>
           ))}
         </Container>
       </React.Fragment>

@@ -69,7 +69,11 @@ class Course extends React.Component {
                   style={{ color: "#fff !important" }}
                   avatar={<Avatar src={this.props.logo} />}
                   title={item.courseName}
-                  description={this.props.oranizationName}
+                  description={
+                    <a href={"/organization/" + this.props.id} className="xxx">
+                      {this.props.oranizationName}
+                    </a>
+                  }
                 />
               </Card>
             </a>
