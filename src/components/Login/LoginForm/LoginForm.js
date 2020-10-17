@@ -30,7 +30,7 @@ class LoginForm extends React.Component {
                     accessToken: data.jwtToken
                 }
                 localStorage.setItem(
-                    'user', data.user
+                    'user', JSON.stringify(data.user)
                 )
                 localStorage.setItem(
                     'accessToken', data.jwtToken

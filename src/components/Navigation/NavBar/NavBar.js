@@ -3,15 +3,12 @@ import { Row, Col, Dropdown, Menu, Avatar, Button } from "antd";
 import cssClasses from "./NavBar.module.css";
 import { DownOutlined } from "@ant-design/icons";
 import logo from "../../../assets/icons/logo.png";
+import avatar from "../../../assets/icons/avatar.svg";
 import cssCustom from "../NavBar.css";
 
 class NavBar extends React.Component {
   state = {
-    // currentUser: {
-    //     id: 1,
-    //     is_admin: false,
-    // }
-    currentUser: localStorage.user,
+    currentUser: JSON.parse(localStorage.getItem('user'))
   };
 
   onClick = ({ key }) => {
@@ -42,7 +39,7 @@ class NavBar extends React.Component {
         align="space-between"
         style={{ backgroundColor: "white" }}>
         <Col>
-          <img src={logo} style={{ height: `40px` }} />
+          <img alt='logo' src={logo} style={{ height: `40px` }} />
         </Col>
         <Col>
           <Dropdown overlay={menu}>
@@ -97,11 +94,13 @@ class NavBar extends React.Component {
               }
               placement="bottomRight"
             >
-              <Avatar
-                className={cssClasses.Avatar}
-                shape="circle"
-                src={this.state.currentUser.ava_url}
-              />
+              <div>
+                <span style={{marginRight: '10px',fontSize: '16px'}}>Hi, <span style={{fontWeight: 'bold'}}>{this.state.currentUser.name}</span></span>
+                <Avatar
+                  className={cssClasses.Avatar}
+                  shape="circle"
+                  src={avatar}
+                /></div>
             </Dropdown>
           </Col>
         ) : (
@@ -122,16 +121,6 @@ class NavBar extends React.Component {
               >
                 Sign in
             </Button>
-              {/* <Button
-                                type="primary"
-                                style={{
-                                    width: "100px"
-                                }}
-                                className={cssClasses.LoginButton}
-                                onClick={this.LoginButtonHandler}
-                            >
-                                Sign in
-                                </Button> */}
             </Col>
           )}
       </Row>

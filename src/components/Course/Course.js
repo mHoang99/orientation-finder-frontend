@@ -1,14 +1,10 @@
 import React from "react";
 import "./Course.css";
 
-import { Button, Col, Row, Modal, Checkbox, message, Image } from "antd";
 import Logo from "../../assets/image/logo.png";
-import { Timeline, Carousel } from "antd";
-import { ClockCircleOutlined } from "@ant-design/icons";
-import slide1 from "../../assets/image/slide1.png";
-import logo from "../../assets/image/logo.jpeg";
-import Container from "../UI/Container/Container";
-import { List, Avatar, Card, Popconfirm, Skeleton } from "antd";
+import { List, Avatar, Card, Popconfirm, Skeleton,  } from "antd";
+import { StarOutlined } from '@ant-design/icons';
+
 
 const { Meta } = Card;
 
@@ -57,7 +53,7 @@ class Course extends React.Component {
                   />
                 }
                 actions={[
-                  <IconText type="like" text={`Test`} key="upvote" />,
+                  <StarOutlined />,
                   <IconText
                     type="bar-chart"
                     text={"Level: " + "1"}
