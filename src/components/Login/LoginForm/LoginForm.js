@@ -39,6 +39,8 @@ class LoginForm extends React.Component {
                     loading: false,
                     message: resMessage,
                 });
+                window.alert(resMessage)
+                
             }
         );
 

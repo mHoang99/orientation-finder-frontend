@@ -16,26 +16,25 @@ import Categories from "./container/Categories/Categories";
 const url = "localhost:3000";
 
 const App = () => {
-  console.log(window.location.href);
-  return (
-    <BrowserRouter>
-      <Layout style={{ backgroundColor: "white" }}>
-        {window.location.href !== `${url}/quiz` ? <Header /> : null}
-        <Switch>
-          <Route path="/addcourse" component={CreateCourse} />
-          <Route path="/speciality/:sid" component={Speciality} />
-          <Route path="/auth/:isRegister" component={Auth} />
-          {/* <Route path="/quiz" component={Quiz} /> */}
-          <Route path="/organization/:id" component={Detail} />
-          <Route path="/" exact component={Landing} />
-          <Route path="/abc" exact component={ABC} />
-          <Route path="/categories" exact component={Categories} />
-          <Route render={() => <h1>Not found</h1>} />
-        </Switch>
-        {window.location.href !== `${url}/quiz` ? <Footer /> : null}
-      </Layout>
-    </BrowserRouter>
-  );
+
+    return (
+        <BrowserRouter>
+            <Layout style={{ backgroundColor: "white" }}>
+                <Header />
+                <Switch>
+                    <Route path="/addcourse" component={CreateCourse} />
+                    <Route path="/speciality/:sid" component={Speciality} />
+                    <Route path="/auth/:isRegister" component={Auth} />
+                    <Route path="/organization/:id" component={Detail} />
+                    <Route path="/" exact component={Landing} />
+                    <Route path="/abc" exact component={ABC} />
+                    <Route path="/categories" exact component={Categories} />
+                    <Route render={() => <h1>Not found</h1>} />
+                </Switch>
+                <Footer />
+            </Layout>
+        </BrowserRouter>
+    );
 };
 
 export default App;

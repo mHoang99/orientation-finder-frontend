@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactPlayer from 'react-player'
-import { Col, Row, Progress, Card, Divider, Button,Input, Alert } from 'antd';
+import { Col, Row, Progress, Card, Divider, Button, Input, Alert } from 'antd';
 import cssClasses from './Speciality.module.css'
 import './Speciality.css'
 import FeeAndScore from '../../components/Table/FeeAndScoreTable/FeeAndScore'
@@ -19,7 +19,8 @@ class Speciality extends React.Component {
         intro: "",
         grades: [],
         salary: [],
-        point: {}
+        point: {},
+        introVideo: "",
     }
 
     componentDidMount = () => {
@@ -34,7 +35,8 @@ class Speciality extends React.Component {
                             intro: res.data.category.intro,
                             grades: res.data.category.grades,
                             salary: res.data.category.salary,
-                            point: res.data.category.point
+                            point: res.data.category.point,
+                            introVideo: res.data.category.introVideo
                         })
                     }
                 }
@@ -46,10 +48,10 @@ class Speciality extends React.Component {
             )
         // console.log(JSON.parse(localStorage.getItem('user')))
     }
-   
+
     render() {
-        let p = (this.state.point.userPoint/this.state.point.maxPoint*100).toFixed(0);
-        p = isNaN(p) ? 0 : p 
+        let p = (this.state.point.userPoint / this.state.point.maxPoint * 100).toFixed(0);
+        p = isNaN(p) ? 0 : p
         return (
             <React.Fragment>
                 <Container>
@@ -78,7 +80,7 @@ class Speciality extends React.Component {
                     <Divider style={{ fontSize: "30px", fontWeight: "bold", width: "calc(100% - 45px)", color: "#4f566b", margin: "50px 0" }}>INTRODUCTIONS</Divider>
 
                     <Row justify="center" >
-                        <ReactPlayer controls="true" url='https://www.youtube.com/watch?v=ysz5S6PUM-U' width="calc(100% - 45px)" height="40vw" />
+                        <ReactPlayer controls="true" url={this.state.introVideo} width="calc(100% - 45px)" height="40vw" />
                     </Row>
                     <Divider style={{ fontSize: "30px", fontWeight: "bold", width: "calc(100% - 45px)", color: "#4f566b", margin: "50px 0" }}>STATISTICS</Divider>
 
@@ -91,11 +93,13 @@ class Speciality extends React.Component {
                         </Col>
                     </Row>
                     <Divider style={{ fontSize: "30px", fontWeight: "bold", width: "calc(50% - 45px)", color: "#4f566b", margin: "50px 0" }}>WARM UP</Divider>
-                    <WarmUp/>
+                    <WarmUp />
                     <div style={{ height: "75px" }}></div>
 
                     <Divider style={{ fontSize: "30px", fontWeight: "bold", width: "calc(50% - 45px)", color: "#4f566b", margin: "50px 0" }}>COURSES</Divider>
-                    <Course data={this.state.coursesData} />
+                    <Course
+                        data={this.state.coursesData}                                    
+                    />
                 </Container>
             </React.Fragment >
         )
