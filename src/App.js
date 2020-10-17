@@ -8,8 +8,7 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import CreateCourse from "./container/CreateCourse/CreateCourse";
 import Speciality from "./container/Speciality/Speciality";
 import Header from "./container/Header/Header";
-import Quiz from "./components/ModalDetail/ModalDoQuiz";
-import Detail from "./components/Oranization/Information";
+import Detail from "./components/Organization/Information";
 import Footer from "./container/Footer/Footer";
 import Categories from "./container/Categories/Categories";
 
@@ -25,7 +24,6 @@ const App = () => {
           <Route path="/addcourse" component={CreateCourse} />
           <Route path="/speciality/:sid" component={Speciality} />
           <Route path="/auth/:isRegister" component={Auth} />
-          <Route path="/quiz" component={Quiz} />
           <Route path="/categories" component={Categories} />
           <Route path="/organization/:id" component={Detail} />
           <Route path="/" exact component={Landing} />
