@@ -2,7 +2,7 @@ import React from "react";
 import cssClasses from "./Categories.module.css";
 import Container from "../../components/UI/Container/Container";
 import { Divider } from "antd";
-import Course from "../../components/Course/Course";
+import Course from "../../components/CourseM/CourseM";
 import dataService from "../../services/data.service";
 
 class Categories extends React.Component {
@@ -42,18 +42,8 @@ class Categories extends React.Component {
                 {data}
                 {console.log(this.state.data[data])}
               </Divider>
-              {this.state.data[data].map((data1, index1) => {
-                let t = [];
-                t.push(data1);
-                return (
-                  <Course
-                    data={t}
-                    logo={data1.organizationLogo}
-                    organizationName={data1.organizationName}
-                    id={data1.organizationId}
-                  />
-                );
-              })}
+
+              <Course data={this.state.data[data]} />
             </div>
           ))}
         </Container>
