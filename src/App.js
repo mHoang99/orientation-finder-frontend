@@ -26,12 +26,13 @@ const App = () => {
           <Route path="/addcourse" component={CreateCourse} />
           <Route path="/speciality/:sid" component={Speciality} />
           <Route path="/auth/:isRegister" component={Auth} />
+          {/* <Route path="/quiz" component={Quiz} /> */}
           <Route path="/organization/:id" component={Detail} />
-          <Route path="/organization/:id" component={Detail} />
-          <Route path="/organization" exact component={ListOrg} />
+          <Route path="/organizations" exact component={ListOrg} />
 
           <Route path="/" exact component={Landing} />
           <Route path="/abc" exact component={ABC} />
+          <Route path="/categories" exact component={Categories} />
           <Route render={() => <h1>Not found</h1>} />
         </Switch>
         {window.location.href !== `${url}/quiz` ? <Footer /> : null}

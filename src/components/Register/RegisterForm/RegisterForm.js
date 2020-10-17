@@ -58,9 +58,6 @@ class RegisterForm extends React.Component {
             successful: false
         });
 
-        this.props.switchType()
-
-
         AuthService.register(
             this.state.email,
             this.state.password,
@@ -72,12 +69,11 @@ class RegisterForm extends React.Component {
                 response => {
                     console.log(response)
                     // if (response.success) {
-                    this.setState({
-                        message: response.data.message,
-                        successful: true
-                    });
+                    // this.setState({
+                    //     message: response.data.message,
+                    //     successful: true
+                    // });
                     this.props.switchType()
-                    // }
                 }
             )
             .catch(
@@ -109,6 +105,10 @@ class RegisterForm extends React.Component {
                 name="register"
                 onFinish={this.handleFormSubmit}
                 scrollToFirstError
+                initialValues={{
+                    name: this.state.name,
+                    email: this.state.email,
+                }}
             >
                 <Form.Item
                     name="email"
@@ -125,7 +125,6 @@ class RegisterForm extends React.Component {
                     ]}
                 >
                     <Input
-                        initialValue={this.state.email}
                         size='large'
                         placeholder="Email"
                         onChange={this.handleEmailChange}
@@ -182,7 +181,6 @@ class RegisterForm extends React.Component {
                     rules={[{ required: true, message: 'Please input your fullname!', whitespace: true }]}
                 >
                     <Input
-                        initialValue={this.state.name}
                         size='large'
                         placeholder="Fullname"
                         onChange={this.handleNameChange}

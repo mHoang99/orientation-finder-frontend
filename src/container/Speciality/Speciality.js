@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactPlayer from 'react-player'
-import { Col, Row, Progress, Card, Divider, Button } from 'antd';
+import { Col, Row, Progress, Card, Divider, Button,Input, Alert } from 'antd';
 import cssClasses from './Speciality.module.css'
 import './Speciality.css'
 import FeeAndScore from '../../components/Table/FeeAndScoreTable/FeeAndScore'
@@ -9,6 +9,7 @@ import Container from '../../components/UI/Container/Container';
 import Course from '../../components/Course/Course';
 import axios from 'axios'
 import DataService from '../../services/data.service';
+import WarmUp from '../../components/WarmUp/WarmUp';
 
 class Speciality extends React.Component {
     state = {
@@ -45,7 +46,7 @@ class Speciality extends React.Component {
             )
         // console.log(JSON.parse(localStorage.getItem('user')))
     }
-
+   
     render() {
         let p = (this.state.point.userPoint/this.state.point.maxPoint*100).toFixed(0);
         p = isNaN(p) ? 0 : p 
@@ -90,13 +91,8 @@ class Speciality extends React.Component {
                         </Col>
                     </Row>
                     <Divider style={{ fontSize: "30px", fontWeight: "bold", width: "calc(50% - 45px)", color: "#4f566b", margin: "50px 0" }}>WARM UP</Divider>
-                    <Row>
-                        <Col span={12}>
-                            <a href="/robots.txt" target="new">enter</a>
-                        </Col>
-                        <Col span={12}></Col>
-                    </Row>
-                    <div style={{ height: "500px" }}></div>
+                    <WarmUp/>
+                    <div style={{ height: "75px" }}></div>
 
                     <Divider style={{ fontSize: "30px", fontWeight: "bold", width: "calc(50% - 45px)", color: "#4f566b", margin: "50px 0" }}>COURSES</Divider>
                     <Course data={this.state.coursesData} />

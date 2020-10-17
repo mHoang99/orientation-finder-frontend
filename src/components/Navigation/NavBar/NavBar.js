@@ -14,7 +14,8 @@ class NavBar extends React.Component {
     };
 
     onClick = ({ key }) => {
-        console.log(`Click on item ${key}`);
+        // console.log(`Click on item ${key}`);
+        window.location.href = `/speciality/${key}`
     };
 
     LoginButtonHandler = () => {
@@ -37,7 +38,7 @@ class NavBar extends React.Component {
                 <Menu.Item key="2">Computer Science</Menu.Item>
                 <Menu.Item key="3">Game Developer</Menu.Item>
                 <Menu.Item key="4">Security</Menu.Item>
-                <Menu.Item key="5">Web Developer</Menu.Item>
+                {/* <Menu.Item key="5">Web Developer</Menu.Item> */}
             </Menu>
         );
         return (
@@ -46,13 +47,16 @@ class NavBar extends React.Component {
                 style={{ backgroundColor: "white" }}>
                 <Col span={16} style={{ display: 'inline-flex' }}>
                     <Col>
-                        <img alt='logo' src={logo} style={{ height: `40px` }} />
+                        <a href="http://localhost:3000">
+                            <img alt='logo' src={logo} style={{ height: `40px` }}
+                            />
+                        </a>
                     </Col>
                     <Col style={{ marginLeft: '50px' }}>
                         <Dropdown overlay={menu}>
                             <a
                                 className="ant-dropdown-link"
-                                onClick={(e) => e.preventDefault()}
+                                onClick={(e) => { window.location.href = 'http://localhost:3000/categories' }}
                             >
                                 Categories <DownOutlined />
                             </a>
