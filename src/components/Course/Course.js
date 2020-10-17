@@ -2,9 +2,8 @@ import React from "react";
 import "./Course.css";
 
 import Logo from "../../assets/image/logo.png";
-import { List, Avatar, Card, Popconfirm, Skeleton,  } from "antd";
-import { StarOutlined } from '@ant-design/icons';
-
+import { List, Avatar, Card, Popconfirm, Skeleton } from "antd";
+import { StarOutlined } from "@ant-design/icons";
 
 const { Meta } = Card;
 
@@ -38,22 +37,22 @@ class Course extends React.Component {
         dataSource={this.props.data}
         renderItem={(item) => (
           <List.Item>
-            <a href={"/organization/" + item.organizationId}>
+            <a
+              target="_blank"
+              href={
+                "https://kids.mindx.edu.vn/?utm_source=google&utm_medium=cpc&utm_campaign=kidsearch&utm_content=branding&gclid=CjwKCAjwrKr8BRB_EiwA7eFapqvxo68ixil0cb1B8NtEEfAaOX7rdRU6z0ovEOwHtoc8xpJ2Q6FkoBoCUrEQAvD_BwE"
+              }
+            >
               <Card
                 className="item-inner"
                 hoverable
-                style={{ marginTop: "20px" }}
-                cover={
-                  <img
-                    alt={item.courseContent}
-                    src={item.coursePicture}
-                    width="100"
-                    height="200"
-                    object-fit="cover"
-                  />
-                }
+                style={{
+                  marginTop: "20px",
+                  backgroundImage: `linear-gradient(to bottom right, #5c57ab, #00f1ff)`,
+                  borderRadius: `3px`,
+                }}
                 actions={[
-                  <StarOutlined />,
+                  <StarOutlined style={{ color: "#4f556b" }} />,
                   <IconText
                     type="bar-chart"
                     text={"Level: " + "1"}
@@ -67,9 +66,10 @@ class Course extends React.Component {
                 ]}
               >
                 <Meta
-                  avatar={<Avatar src={Logo} />}
+                  style={{ color: "#fff !important" }}
+                  avatar={<Avatar src={this.props.logo} />}
                   title={item.courseContent}
-                  description={item.oranizationName}
+                  description={this.props.oranizationName}
                 />
               </Card>
             </a>

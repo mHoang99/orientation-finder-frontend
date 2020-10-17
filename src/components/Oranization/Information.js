@@ -3,13 +3,16 @@ import { Button, Col, Row, Modal, Checkbox, message, Image } from "antd";
 import Logo from "../../assets/image/logo.png";
 import { Timeline, Carousel } from "antd";
 import { ClockCircleOutlined } from "@ant-design/icons";
-import slide4 from "../../assets/image/slide4.jpg";
+import mindx from "../../assets/image/mindx.jpg";
 import "./information.css";
 import Container from "../UI/Container/Container";
 import Course from "../Course/Course";
 import axios from "axios";
+import dataService from "../../services/data.service";
+
 class Detail extends React.Component {
   state = {
+    Data: {},
     data: [
       {
         courseId: 1,
@@ -68,20 +71,33 @@ class Detail extends React.Component {
     ],
   };
   componentDidMount() {
-    axios
-      .get(axios.defaults.baseURL + "/organization/get-detail?id=1")
-      .then((res) => {})
-      .catch((e) => {});
+    const options = {
+      methods: "get",
+      url: axios.defaults.baseURL + "organization/get-detail?id=1",
+    };
+    dataService
+      .getCompanyDetail(1)
+      .then((res) => {
+        console.log(res.data);
+        this.setState({
+          Data: res.data.organization,
+        });
+      })
+      .catch((e) => {
+        console.log(e.response);
+      });
   }
   render() {
     return (
       <Container>
         <Row align="middle" justify="center" style={{ marginTop: "40px" }}>
           <Col>
-            <Image src={Logo} />
+            <Image src={this.state.Data.logo} />
           </Col>
           <Col style={{ paddingLeft: "15px" }}>
-            <Row style={{ fontSize: "25px", fontWeight: "bold" }}>MindX</Row>
+            <Row style={{ fontSize: "25px", fontWeight: "bold" }}>
+              {this.state.Data.name}
+            </Row>
             <Row style={{ fontSize: "20px" }}>Journey of dreams</Row>
           </Col>
         </Row>
@@ -89,99 +105,89 @@ class Detail extends React.Component {
           style={{ borderBottom: "1px solid  #f2f2f2", marginTop: "20px" }}
         ></div>
         <div>
-          <Row
-            justify="center"
-            style={{ marginTop: "20px", fontSize: "30px", fontWeight: "bold" }}
+          <h1
+            style={{
+              marginBottom: "50px",
+              fontWeight: "bold",
+              textAlign: "center",
+            }}
           >
             Short introduction
-          </Row>
+          </h1>
           <Row justify="space-around" style={{ marginTop: "20px" }}>
             <Col lg={12} style={{ marginTop: "20px", fontSize: "18px" }}>
               <Timeline mode="alternate">
                 <Timeline.Item>
-                  <h2>Create a services site 2015-09-01</h2>
+                  <h2>2015, start with "Techkids" </h2>
                 </Timeline.Item>
                 <Timeline.Item color="green">
-                  <h2>Solve initial network problems 2015-09-01</h2>
+                  <h2>
+                    2017, Techkids has 2 more offices. First class for high
+                    school and secondary school students
+                  </h2>
                 </Timeline.Item>
                 <Timeline.Item
                   dot={<ClockCircleOutlined style={{ fontSize: "16px" }} />}
                 >
                   <h2>
-                    Sed ut perspiciatis unde omnis iste natus error sit
-                    voluptatem accusantium doloremque laudantium, totam rem
-                    aperiam, eaque ipsa quae ab illo ih2nventore veritatis et
-                    quasi architecto beatae vitae dicta sunt explicabo.
+                    2017, change name to "MindX" and start the Journey to the
+                    Future
                   </h2>
                 </Timeline.Item>
+
                 <Timeline.Item color="red">
-                  <h2>Network problems being solved 2015-09-01</h2>
-                </Timeline.Item>
-                <Timeline.Item>
-                  <h2>Create a services site 2015-09-01</h2>
-                </Timeline.Item>
-                <Timeline.Item
-                  dot={<ClockCircleOutlined style={{ fontSize: "16px" }} />}
-                >
-                  <h2> Technical testing 2015-09-01</h2>
+                  <h2>In the future, MindX will always be by your side</h2>
                 </Timeline.Item>
               </Timeline>
             </Col>
             <Col lg={10}>
-              <Image src={slide4} alt="" width={600} height={600} />,
+              <Image src={mindx} alt="" />
             </Col>
           </Row>
           <div>
-            <Row
-              justify="center"
+            <h1
               style={{
-                marginTop: "20px",
-                marginBottom: "20px",
-                fontSize: "30px",
+                margin: "50px 0",
                 fontWeight: "bold",
+                textAlign: "center",
+                paddingTop: "0",
               }}
             >
               Courses
-            </Row>
+            </h1>
 
-            <Course data={this.state.data} />
+            <Course
+              data={this.state.Data.courses}
+              logo={this.state.Data.logo}
+              oranizationName={this.state.Data.name}
+            />
           </div>
           <div>
-            <Row
-              justify="center"
-              style={{
-                marginTop: "20px",
-                fontSize: "30px",
-                fontWeight: "bold",
-              }}
-            >
+            <h1 style={{ fontWeight: "bold", textAlign: "center" }}>
               Contact us
-            </Row>
+            </h1>
             <Row justify="space-around">
               <Col>
-                <Row>
+                <Row style={{ lineHeight: `50px` }}>
+                  <h2>1.{this.state.Data.address}</h2>
+                </Row>
+                <Row style={{ lineHeight: `50px` }}>
                   <h2>
-                    6 floor, Chigamex building 22C Thanh Cong, Ba Đình, HN
-                    02477705666
+                    2. 2nd floor, 29T1 Hoang Dao Thuy, HN - Tel: 02477702666
                   </h2>
                 </Row>
-                <Row>
-                  <h2>2 floor, 29T1 Hoang Dao Thuy, HN 02477702666</h2>
+                <Row style={{ lineHeight: `50px` }}>
+                  <h2>3. 6th floor, Nguyen Phong Sac, HN - Tel: 02477703666</h2>
                 </Row>
-                <Row>
-                  <h2> 6 floor, Nguyen Phong Sac 107 N, HN 02477703666</h2>
-                </Row>
-              </Col>
-              <Col>
-                <Row>
-                  {" "}
-                  <h2>5 floor , 71 Nguyen Chi Thanh, HN 02477704666</h2>
-                </Row>
-
-                <Row>
+                <Row style={{ lineHeight: `50px` }}>
                   <h2>
-                    {" "}
-                    4 floor, 505 Minh Khai, Hai Ba Trung distric, HN 02477707666
+                    4. 5th floor , 71 Nguyen Chi Thanh, HN - Tel: 02477704666
+                  </h2>
+                </Row>
+                <Row style={{ lineHeight: `50px` }}>
+                  <h2>
+                    5. 4th floor, 505 Minh Khai, Hai Ba Trung district, HN -
+                    Tel: 02477707666
                   </h2>
                 </Row>
               </Col>

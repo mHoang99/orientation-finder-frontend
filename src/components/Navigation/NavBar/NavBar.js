@@ -38,44 +38,47 @@ class NavBar extends React.Component {
       <Row
         align="space-between"
         style={{ backgroundColor: "white" }}>
-        <Col>
-          <img alt='logo' src={logo} style={{ height: `40px` }} />
-        </Col>
-        <Col>
-          <Dropdown overlay={menu}>
-            <a
-              className="ant-dropdown-link"
-              onClick={(e) => e.preventDefault()}
-            >
-              Categories <DownOutlined />
-            </a>
-          </Dropdown>
-        </Col>
-        <Col>
-          <a className="ant-dropdown-link" onClick={(e) => e.preventDefault()}>
-            Organizations
+        <Col span={16} style={{ display: 'inline-flex' }}>
+          <Col>
+            <img alt='logo' src={logo} style={{ height: `40px` }} />
+          </Col>
+          <Col style={{marginLeft: '50px'}}>
+            <Dropdown overlay={menu}>
+              <a
+                className="ant-dropdown-link"
+                onClick={(e) => e.preventDefault()}
+              >
+                Categories <DownOutlined />
+              </a>
+            </Dropdown>
+          </Col>
+          <Col style={{marginLeft: '20px'}}>
+            <a className="ant-dropdown-link" onClick={(e) => e.preventDefault()}>
+              Organizations
           </a>
-        </Col>
-        <Col>
-          <a className="ant-dropdown-link" onClick={(e) => e.preventDefault()}>
-            Help Center
+          </Col>
+          <Col style={{marginLeft: '20px'}}>
+            <a className="ant-dropdown-link" onClick={(e) => e.preventDefault()}>
+              Help Center
           </a>
+          </Col>
         </Col>
-
         {this.state.currentUser ? (
           <Col span={6} align="end">
             <Dropdown
-              style={{ marginLeft: "2vw", position: "fixed" }}
+              style={{ position: "fixed", width: '200px', right: '0' }}
               overlay={
                 <Menu
                   style={{
                     marginTop: "5px",
                     padding: "10px",
                     borderRadius: "10px",
+                    width: '200px',
+                    left: '200px'
                   }}
                 >
                   <Menu.Item
-                    align="right"
+                    align="left"
                     style={{
                       borderRadius: "10px",
                     }}
@@ -83,7 +86,7 @@ class NavBar extends React.Component {
                     Favourite courses
                   </Menu.Item>
                   <Menu.Item
-                    align="right"
+                    align="left"
                     style={{
                       borderRadius: "10px",
                     }}
@@ -95,7 +98,7 @@ class NavBar extends React.Component {
               placement="bottomRight"
             >
               <div>
-                <span style={{marginRight: '10px',fontSize: '16px'}}>Hi, <span style={{fontWeight: 'bold'}}>{this.state.currentUser.name}</span></span>
+                <span style={{ marginRight: '10px', fontSize: '16px' }}>Hi, <span style={{ fontWeight: 'bold' }}>{this.state.currentUser.name}</span></span>
                 <Avatar
                   className={cssClasses.Avatar}
                   shape="circle"

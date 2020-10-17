@@ -12,6 +12,7 @@ import Quiz from "./components/ModalDetail/ModalDoQuiz";
 import Detail from "./components/Oranization/Information";
 import Footer from "./container/Footer/Footer";
 import ABC from "./container/ABC/ABC";
+import Categories from "./container/Categories/Categories";
 
 const url = "localhost:3000";
 
@@ -35,6 +36,7 @@ const App = () => {
             </Layout>
         </BrowserRouter>
     );
-};
+}
+
 
 export default App;
