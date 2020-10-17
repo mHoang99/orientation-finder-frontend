@@ -250,8 +250,7 @@ class Start extends React.Component {
     return (
       <div style={{ height: "100%" }}>
         <Row style={{ fontSize: "23px" }}>
-          Trả lời câu hỏi sẽ xác định được sở thích của bạn,Chúng ta cùng bắt
-          đầu nào
+         Let's figure out which IT major is suitable with you!
         </Row>
         <Row
           justify="center"
@@ -264,7 +263,7 @@ class Start extends React.Component {
             id="abc"
             onClick={this.props.getStart}
           >
-            Get start
+            Get started
           </Button>
         </Row>
       </div>

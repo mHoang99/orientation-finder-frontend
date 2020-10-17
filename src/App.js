@@ -5,7 +5,6 @@ import "./index.css";
 import Auth from "./container/Auth/Auth";
 import Landing from "./container/Landing/Landing";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-import Course from "./container/Course/Course";
 import CreateCourse from "./container/CreateCourse/CreateCourse";
 import Speciality from "./container/Speciality/Speciality";
 import Header from "./container/Header/Header";
@@ -22,7 +21,6 @@ const App = () => {
       <Layout style={{ backgroundColor: "white" }}>
         {window.location.href !== `${url}/quiz` ? <Header /> : null}
         <Switch>
-          <Route path="/course/:cid" component={Course} />
           <Route path="/addcourse" component={CreateCourse} />
           <Route path="/speciality/:sid" component={Speciality} />
           <Route path="/auth/:isRegister" component={Auth} />

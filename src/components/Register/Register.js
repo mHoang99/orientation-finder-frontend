@@ -1,15 +1,15 @@
 import React from "react";
 import cssClasses from './Register.module.css'
 import RegisterForm from "./RegisterForm/RegisterForm";
-
+import logo from '../../assets/icons/logo.png'
 
 class Register extends React.Component {
 
     render() {
         return (
             <div className={cssClasses.RegisterBox}>
-                <div className={cssClasses.RegisterHeader} >
-                    REGISTER
+                <div className={cssClasses.RegisterHeader} style={{textAlign: 'center'}} >
+                    <img src={logo} />
                 </div>
                 <RegisterForm />
                 <p className={cssClasses.HadAccount}>

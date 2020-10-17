@@ -21,21 +21,26 @@ class NavBar extends React.Component {
   LoginButtonHandler = () => {
     window.location.href = "/auth/true";
   };
-
   RegisterButtonHandler = () => {
-    window.location.href = "/auth/false";
-  };
+    window.location.href = '/auth/false'
+  }
+
+
 
   render() {
     const menu = (
       <Menu onClick={this.onClick}>
-        <Menu.Item key="1">1st menu item</Menu.Item>
-        <Menu.Item key="2">2nd memu item</Menu.Item>
-        <Menu.Item key="3">3rd menu item</Menu.Item>
+        <Menu.Item key="1">Artificial Intelligence</Menu.Item>
+        <Menu.Item key="2">Computer Science</Menu.Item>
+        <Menu.Item key="3">Game Developer</Menu.Item>
+        <Menu.Item key="4">Security</Menu.Item>
+        <Menu.Item key="5">Web Developer</Menu.Item>
       </Menu>
     );
     return (
-      <Row align="space-between" style={{ backgroundColor: "white" }}>
+      <Row
+        align="space-between"
+        style={{ backgroundColor: "white" }}>
         <Col>
           <img src={logo} style={{ height: `40px` }} />
         </Col>
@@ -100,24 +105,24 @@ class NavBar extends React.Component {
             </Dropdown>
           </Col>
         ) : (
-          <Col span={6} align="right">
-            <Button
-              className={cssClasses.RegisterButton}
-              type="link"
-              onClick={this.RegisterButtonHandler}
-            >
-              Register
+            <Col span={6} align="right">
+              <Button
+                className={cssClasses.RegisterButton}
+                type="link"
+                onClick={this.RegisterButtonHandler}
+              >
+                Register
             </Button>
-            <Button
-              className={[cssClasses.LoginButton, cssClasses.Bold].join(" ")}
-              shape="round"
-              htmlType="submit"
-              size="large"
-              onClick={this.LoginButtonHandler}
-            >
-              Sign in
+              <Button
+                className={[cssClasses.LoginButton, cssClasses.Bold].join(" ")}
+                shape="round"
+                htmlType="submit"
+                size="large"
+                onClick={this.LoginButtonHandler}
+              >
+                Sign in
             </Button>
-            {/* <Button
+              {/* <Button
                                 type="primary"
                                 style={{
                                     width: "100px"
@@ -127,8 +132,8 @@ class NavBar extends React.Component {
                             >
                                 Sign in
                                 </Button> */}
-          </Col>
-        )}
+            </Col>
+          )}
       </Row>
     );
   }
