@@ -1,17 +1,17 @@
 import axios from 'axios';
 import authHeader from './auth-header';
 
-const API_URL = 'http://localhost:8080/api/test/';
+const API_URL = 'http://10.1.10.110:8080/';
 
 class UserService {
-  getUserInfo() {
-    return axios.get(API_URL + 'user', { headers: authHeader() });
-  }
+    getUserInfo() {
+        return axios.get(axios.defaults.url + 'user', { headers: authHeader() });
+    }
 
-  getCompanyContact() {
-    return axios.get(API_URL + 'mod', { headers: authHeader() });
-  }
-  
+    getCompanyContact() {
+        return axios.get(axios.defaults.url + 'mod', { headers: authHeader() });
+    }
+
 }
 
 export default new UserService();

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Form, Input, Alert, Button} from "antd";
+import { Form, Input, Alert, Button } from "antd";
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
 import cssClasses from './LoginForm.module.css';
 import AuthService from '../../../services/auth.service';
@@ -8,7 +8,7 @@ import FacebookLogin from 'react-facebook-login/dist/facebook-login-render-props
 class LoginForm extends React.Component {
 
     state = {
-        username: "",
+        email: "",
         password: "",
         err: "",
         message: "",
@@ -21,7 +21,7 @@ class LoginForm extends React.Component {
             isLoading: true,
         });
 
-        AuthService.login(this.state.username, this.state.password).then(
+        AuthService.login(this.state.email, this.state.password).then(
             (data) => {
                 window.alert("logged in");
                 console.log(data);
