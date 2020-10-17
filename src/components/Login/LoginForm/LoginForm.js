@@ -23,19 +23,14 @@ class LoginForm extends React.Component {
 
         AuthService.login(this.state.email, this.state.password).then(
             (data) => {
-                window.alert("logged in");
                 console.log(data);
-                let user = {
-                    ...data.user,
-                    accessToken: data.jwtToken
-                }
                 localStorage.setItem(
                     'user', JSON.stringify(data.user)
                 )
                 localStorage.setItem(
                     'accessToken', data.jwtToken
-
                 )
+                
             },
             error => {
                 const resMessage =

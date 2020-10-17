@@ -10,44 +10,60 @@ const columns = [
         key: 'key',
     },
     {
-        title: 'Speciality',
-        dataIndex: 'spec',
-        key: 'spec',
+        title: 'Organization',
+        dataIndex: 'org',
+        key: 'org',
     },
     {
-        title: 'Average Salary',
-        dataIndex: 'salary',
-        key: 'salary',
-        sorter: (a, b) => a.salary - b.salary,
-        sortDirections: ['descend', 'ascend'],
+        title: 'Position',
+        dataIndex: 'tags',
+        key: 'tags',
+        render: tags => {
+            console.log(tags);
+            return (
+                <>
+                    {tags.map(tag => {
+                        let color = tag.length > 5 ? 'geekblue' : 'green';
+                        if (tag === 'loser') {
+                            color = 'volcano';
+                        }
+                        return (
+                            <Tag color={color} key={tag}>
+                                {tag.toUpperCase()}
+                            </Tag>
+                        );
+                    })}
+                </>
+            )
+        },
     }
 ];
 
-const data = [
-    {
-        key: '1',
-        spec: 'John Brown',
-        salary: 32,
-    },
-    {
-        key: '2',
-        spec: 'John A',
-        salary: 35,
-    },
-    {
-        key: '3',
-        spec: 'John C',
-        salary: 36,
-    },
-];
 
 class SalaryTable extends React.Component {
 
-    state = {
-        data: this.props.salaryTable
-    }
+    // state = {
+    //     data: this.props.list
+    // }
+
 
     render() {
+        const data = [];
+        this.props.list.forEach((value, index) => {
+            if (value.position) {
+                data.push({
+                    key: index + 1,
+                    org: value.name,
+                    tags: value.position.split(', ')
+                })
+            }
+
+        });
+
+
+
+        console.log(data)
+        console.log(this.props)
         return (
             <React.Fragment>
                 <Card className={cssClasses.container}>

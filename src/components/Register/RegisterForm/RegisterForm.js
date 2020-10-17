@@ -58,6 +58,9 @@ class RegisterForm extends React.Component {
             successful: false
         });
 
+        this.props.switchType()
+
+
         AuthService.register(
             this.state.email,
             this.state.password,
@@ -68,10 +71,13 @@ class RegisterForm extends React.Component {
             .then(
                 response => {
                     console.log(response)
-                    this.setState({
-                        message: response.data.message,
-                        successful: true
-                    });
+                    // if (response.success) {
+                        this.setState({
+                            message: response.data.message,
+                            successful: true
+                        });
+                        this.props.switchType()
+                    // }
                 }
             )
             .catch(

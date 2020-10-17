@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactPlayer from 'react-player'
-import { Col, Row, Progress, Card, Divider } from 'antd';
+import { Col, Row, Progress, Card, Divider, Button } from 'antd';
 import cssClasses from './Speciality.module.css'
 import './Speciality.css'
 import FeeAndScore from '../../components/Table/FeeAndScoreTable/FeeAndScore'
@@ -15,7 +15,9 @@ class Speciality extends React.Component {
         sid: this.props.match.params.sid,
         coursesData: [],
         name: "",
-        intro: ""
+        intro: "",
+        grades: [],
+        salary: [],
     }
 
     componentDidMount = () => {
@@ -27,7 +29,9 @@ class Speciality extends React.Component {
                         this.setState({
                             coursesData: res.data.category.courses,
                             name: res.data.category.name,
-                            intro: res.data.category.intro
+                            intro: res.data.category.intro,
+                            grades: res.data.category.grades,
+                            salary: res.data.category.salary,
                         })
                     }
                 }
@@ -75,15 +79,17 @@ class Speciality extends React.Component {
 
                     <Row justify='space-around'>
                         <Col span={12}>
-                            <SalaryTable />
+                            <SalaryTable list={this.state.salary} />
                         </Col>
                         <Col span={12}>
-                            <FeeAndScore />
+                            <FeeAndScore list={this.state.grades} />
                         </Col>
                     </Row>
                     <Divider style={{ fontSize: "30px", fontWeight: "bold", width: "calc(50% - 45px)", color: "#4f566b", margin: "50px 0" }}>WARM UP</Divider>
                     <Row>
-                        <Col span={12}></Col>
+                        <Col span={12}>
+                            <a href="/robots.txt" target="new">enter</a>
+                        </Col>
                         <Col span={12}></Col>
                     </Row>
                     <div style={{ height: "500px" }}></div>
