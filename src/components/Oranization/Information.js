@@ -8,8 +8,11 @@ import "./information.css";
 import Container from "../UI/Container/Container";
 import Course from "../Course/Course";
 import axios from "axios";
+import dataService from "../../services/data.service";
+
 class Detail extends React.Component {
   state = {
+    Data: {},
     data: [
       {
         courseId: 1,
@@ -68,20 +71,33 @@ class Detail extends React.Component {
     ],
   };
   componentDidMount() {
-    axios
-      .get(axios.defaults.baseURL + "/organization/get-detail?id=1")
-      .then((res) => {})
-      .catch((e) => {});
+    const options = {
+      methods: "get",
+      url: axios.defaults.baseURL + "organization/get-detail?id=1",
+    };
+    dataService
+      .getCompanyDetail(1)
+      .then((res) => {
+        console.log(res.data);
+        this.setState({
+          Data: res.data.organization,
+        });
+      })
+      .catch((e) => {
+        console.log(e.response);
+      });
   }
   render() {
     return (
       <Container>
         <Row align="middle" justify="center" style={{ marginTop: "40px" }}>
           <Col>
-            <Image src={Logo} />
+            <Image src={this.state.Data.logo} />
           </Col>
           <Col style={{ paddingLeft: "15px" }}>
-            <Row style={{ fontSize: "25px", fontWeight: "bold" }}>MindX</Row>
+            <Row style={{ fontSize: "25px", fontWeight: "bold" }}>
+              {this.state.Data.name}
+            </Row>
             <Row style={{ fontSize: "20px" }}>Journey of dreams</Row>
           </Col>
         </Row>
@@ -99,10 +115,10 @@ class Detail extends React.Component {
             <Col lg={12} style={{ marginTop: "20px", fontSize: "18px" }}>
               <Timeline mode="alternate">
                 <Timeline.Item>
-                  <h2>Create a services site 2015-09-01</h2>
+                  <h2>Create a services site 2020-09-01</h2>
                 </Timeline.Item>
                 <Timeline.Item color="green">
-                  <h2>Solve initial network problems 2015-09-01</h2>
+                  <h2>Solve initial network problems 2019-09-01</h2>
                 </Timeline.Item>
                 <Timeline.Item
                   dot={<ClockCircleOutlined style={{ fontSize: "16px" }} />}
@@ -115,7 +131,7 @@ class Detail extends React.Component {
                   </h2>
                 </Timeline.Item>
                 <Timeline.Item color="red">
-                  <h2>Network problems being solved 2015-09-01</h2>
+                  <h2>Network problems being solved 2017-04-01</h2>
                 </Timeline.Item>
                 <Timeline.Item>
                   <h2>Create a services site 2015-09-01</h2>
@@ -144,7 +160,11 @@ class Detail extends React.Component {
               Courses
             </Row>
 
-            <Course data={this.state.data} />
+            <Course
+              data={this.state.Data.courses}
+              logo={this.state.Data.logo}
+              oranizationName={this.state.Data.name}
+            />
           </div>
           <div>
             <Row
@@ -160,10 +180,7 @@ class Detail extends React.Component {
             <Row justify="space-around">
               <Col>
                 <Row>
-                  <h2>
-                    6 floor, Chigamex building 22C Thanh Cong, Ba Đình, HN
-                    02477705666
-                  </h2>
+                  <h2>{this.state.Data.address}</h2>
                 </Row>
                 <Row>
                   <h2>2 floor, 29T1 Hoang Dao Thuy, HN 02477702666</h2>

@@ -1,6 +1,6 @@
 import React from "react";
-import { Button, Col, Row, Modal, Checkbox, message, Image, Alert } from "antd";
-import { CloseOutlined, PlayCircleFilled } from "@ant-design/icons";
+import { Button, Col, Row, Modal, Radio, message, Image, Alert } from "antd";
+import { CloseOutlined } from "@ant-design/icons";
 import AI from "../../assets/icons/Artificial Intelligence.svg";
 import CS from "../../assets/icons/Computer Science.svg";
 import GD from "../../assets/icons/Game Developer.svg";
@@ -8,25 +8,28 @@ import "./Modal.css";
 import axios from "axios";
 var validate = (answer, length) => {
   for (var i = 0; i < length; i++) {
-    if (!answer[i]) return false;
+    if (answer[i] === undefined || answer === null) return false;
   }
   return true;
 };
 export default class Quiz extends React.Component {
-  state = {
-    start: true,
-    title: "Let do it !!",
-
-    index: 0,
-    listQuestion: [],
-    answer: [],
-    visible: true,
-    isSubmit: -1,
-  };
-  handleCheckbox = (checkedValues) => {
-    console.log("check :", checkedValues.target.name);
+  constructor(props) {
+    super(props);
+    this.state = {
+      start: true,
+      title: "Let do it !!",
+      index: 0,
+      listQuestion: [],
+      answer: [],
+      data: [],
+      id: [],
+      visible: this.props.visible,
+      isSubmit: -1,
+    };
+  }
+  handleCheckbox = (e) => {
     let listChecked = this.state.answer;
-    listChecked[checkedValues.target.name] = 1;
+    listChecked[e.target.name] = e.target.value;
     this.setState({
       answer: listChecked,
     });
@@ -34,7 +37,9 @@ export default class Quiz extends React.Component {
   handleCancel = () => {
     this.setState({
       visible: false,
+      isSubmit: -1,
     });
+    this.props.closeModal();
   };
   getStart = () => {
     this.setState({
@@ -54,18 +59,30 @@ export default class Quiz extends React.Component {
         debugger;
         if (validate(answer, this.state.listQuestion.length)) {
           //handle submit answer
-          let data = this.state.answer;
+          let data = { answer: this.state.answer };
           const options = {
             method: "post",
             url: axios.defaults.baseURL + "quiz/answer",
             data: data,
           };
+          // debugger;
           axios(options)
             .then((response) => {
-              console.log(response.data);
+              let result = response.data.data;
+              // console.log(result);
+              let a = [],
+                b = [];
+              Object.keys(result).forEach((e) => {
+                console.log(e);
+                b.push(e);
+                a.push(result[e]);
+              });
+              this.state.data = b;
+              this.state.id = a;
+              this.setState(this.state);
             })
             .catch((e) => {
-              console.log(e.response);
+              console.log(e);
             });
           this.setState({
             title: "Result",
@@ -74,20 +91,31 @@ export default class Quiz extends React.Component {
         } else {
           message.error("Answer all question!");
         }
-      } else
+      } else {
         this.setState({
           visible: false,
+          isSubmit: -1,
         });
+        this.props.closeModal();
+      }
     } else {
       this.setState({
         visible: false,
+        isSubmit: -1,
       });
+      this.props.closeModal();
     }
   };
-
+  componentDidUpdate(prevProps, prevState) {
+    if (prevProps.visible != this.props.visible) {
+      this.setState({
+        visible: this.props.visible,
+      });
+    }
+  }
   componentDidMount() {
     //get all question and answer, save to listquestion as format of question
-    debugger;
+
     const options = {
       method: "get",
       url: axios.defaults.baseURL + "quiz/get-all-quiz",
@@ -107,6 +135,7 @@ export default class Quiz extends React.Component {
       });
   }
   render() {
+    console.log(this.props);
     return (
       <div>
         <Modal
@@ -173,23 +202,26 @@ export default class Quiz extends React.Component {
                           : "red",
                     }}
                   >
+                    <span style={{ fontWeight: "600" }}>Q{Index}</span>.
                     {data.question}
                   </Row>
                   <div
                     className="MarginTop"
                     style={{ paddingLeft: "5%", fontSize: "18px" }}
                   >
-                    {data.answer.map((data, index) => (
-                      <div key={index}>
-                        <Checkbox
-                          name={Index}
-                          onChange={this.handleCheckbox}
-                          value={data}
-                        >
-                          <span style={{ fontSize: "18px" }}>{data}</span>
-                        </Checkbox>
-                      </div>
-                    ))}
+                    <Radio.Group
+                      onChange={this.handleCheckbox}
+                      name={Index}
+                      size="large"
+                    >
+                      {data.answer.map((data, index) => (
+                        <div key={index}>
+                          <Radio value={index}>
+                            <span style={{ fontSize: "18px" }}>{data}</span>
+                          </Radio>
+                        </div>
+                      ))}
+                    </Radio.Group>
                   </div>
                   <div
                     className="MarginTop"
@@ -201,7 +233,9 @@ export default class Quiz extends React.Component {
               ))}
             </div>
           )}
-          {this.state.isSubmit == 1 && <Result />}
+          {this.state.isSubmit == 1 && (
+            <Result result={this.state.data} id={this.state.id} />
+          )}
           {this.state.isSubmit == -1 && <Start getStart={this.getStart} />}
         </Modal>
       </div>
@@ -211,7 +245,6 @@ export default class Quiz extends React.Component {
 
 class Result extends React.Component {
   state = {
-    result: ["Artificial Intelligence", "Computer Science", "Game Developer"],
     icon: [AI, CS, GD],
   };
 
@@ -221,10 +254,10 @@ class Result extends React.Component {
         justify="space-around"
         style={{ height: "inherit", alignItems: "center" }}
       >
-        {this.state.result.map((data, index) => (
+        {this.props.result.map((data, index) => (
           <Col align="middle">
             <Row justify="center">
-              <a href={"/" + "speciality/1"}>
+              <a href={"/" + "speciality/" + this.props.id[index].categoryId}>
                 <Image
                   onClick={(e) => {}}
                   src={this.state.icon[index]}
@@ -249,8 +282,8 @@ class Start extends React.Component {
   render() {
     return (
       <div style={{ height: "100%" }}>
-        <Row style={{ fontSize: "23px" }}>
-         Let's figure out which IT major is suitable with you!
+        <Row style={{ fontSize: "23px" }} justify="center">
+          Let's figure out which IT major is suitable with you!
         </Row>
         <Row
           justify="center"
