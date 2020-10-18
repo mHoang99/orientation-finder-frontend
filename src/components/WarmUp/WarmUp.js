@@ -33,145 +33,68 @@ class WarmUp extends React.Component {
   render() {
     return (
       <React.Fragment>
-        {window.location.href.split("/")[2] == 3 ? (
-          <div>
-            <Row>
-              <h1
+        <Row>
+          <h1
+            style={{
+              marginBottom: "2.5rem",
+              padding: "10px",
+              textAlign: "center",
+            }}
+          >
+            Welcome to Cyber Security!
+          </h1>
+        </Row>
+        <Row>
+          <Col span={12} align="start" className={cssClasses.chatHint}>
+            <p className={cssClasses.Odd}>
+              - Let begin with a amazing capture the flag challenge
+            </p>
+            <p className={cssClasses.Even}>
+              - Have you ever heard about "robots.txt"?
+            </p>
+            <p className={cssClasses.Odd}>- Let try it on our site</p>
+            <p className={cssClasses.Even}>- Forbiden Land??</p>
+            <p className={cssClasses.Odd}>- Press Ctrl+U </p>
+            <Row justify="left" style={{ marginTop: "20px" }}>
+              <Input
                 style={{
-                  marginBottom: "2.5rem",
-                  padding: "10px",
-                  textAlign: "center",
+                  width: "40%",
+                  marginRight: "10px",
+                  minWidth: "300px",
                 }}
+                placeholder="Input flag here"
+                onChange={this.onChangeInput}
+              />
+              <Button
+                type="primary"
+                htmlType="submit"
+                onClick={this.handleSubmitFlag}
               >
-                Welcome to Cyber Security!
-              </h1>
+                Submit
+              </Button>
             </Row>
-            <Row>
-              <Col span={12} align="start" className={cssClasses.chatHint}>
-                <p className={cssClasses.Odd}>
-                  - Let begin with a amazing capture the flag challenge
-                </p>
-                <p className={cssClasses.Even}>
-                  - Have you ever heard about "robots.txt"?
-                </p>
-                <p className={cssClasses.Odd}>- Let try it on our site</p>
-                <p className={cssClasses.Even}>- Forbiden Land??</p>
-                <p className={cssClasses.Odd}>- Press Ctrl+U </p>
-                <Row justify="left" style={{ marginTop: "20px" }}>
-                  <Input
-                    style={{
-                      width: "40%",
-                      marginRight: "10px",
-                      minWidth: "300px",
-                    }}
-                    placeholder="Input flag here"
-                    onChange={this.onChangeInput}
-                  />
-                  <Button
-                    type="primary"
-                    htmlType="submit"
-                    onClick={this.handleSubmitFlag}
-                  >
-                    Submit
-                  </Button>
-                </Row>
-              </Col>
-              <Col span={12}>
-                <Row justify="center">
-                  <a
-                    className={cssClasses.TryItOut}
-                    href="/robots.txt"
-                    target='_blank'
-                  >
-                    <img
-                      style={{ width: "250px" }}
-                      src={tryIcon}
-                    />
-                  </a>
-                </Row>
-
-                <Row align="center" style={{ marginTop: "20px" }}>
-                  {this.state.success ? (
-                    <Alert message="Congratulation" type="success" />
-                  ) : null}
-                  {!this.state.hiddenFalse ? (
-                    <Alert message="Try Again" type="error" />
-                  ) : null}
-                </Row>
-              </Col>
-            </Row>
-          </div>
-        ) : (
-          <div>
-            <Row>
-              <h1
-                style={{
-                  marginBottom: "2.5rem",
-                  padding: "10px",
-                  textAlign: "center",
-                }}
+          </Col>
+          <Col span={12}>
+            <Row justify="center">
+              <a
+                className={cssClasses.TryItOut}
+                href="/robots.txt"
+                target="_blank"
               >
-                Welcome to ARTIFICIAL INTELLIGENCE!
-              </h1>
+                <img style={{ width: "250px" }} src={tryIcon} />
+              </a>
             </Row>
-            <Row>
-              <Col span={12} align="start" className={cssClasses.chatHint}>
-                <p className={cssClasses.Odd}>
-                  - Let begin with a amazing AI example about Face Detection
-                </p>
-                <p className={cssClasses.Even}>
-                  - Have you ever heard about "robots.txt"?
-                </p>
-                <p className={cssClasses.Odd}>- Let try it on our site</p>
-                <p className={cssClasses.Even}>- Forbiden Land??</p>
-                <p className={cssClasses.Odd}>- Press Ctrl+U </p>
-                <Row justify="left" style={{ marginTop: "20px" }}>
-                  <Input
-                    style={{
-                      width: "40%",
-                      marginRight: "10px",
-                      minWidth: "300px",
-                    }}
-                    placeholder="Input flag here"
-                    onChange={this.onChangeInput}
-                  />
-                  <Button
-                    type="primary"
-                    htmlType="submit"
-                    onClick={this.handleSubmitFlag}
-                  >
-                    Submit
-                  </Button>
-                </Row>
-              </Col>
-              <Col span={12}>
-                <Row justify="center">
-                  <a
-                    className={cssClasses.TryItOut}
-                    href="/robots.txt"
-                    target="new"
-                  >
-                    <img
-                      style={{ width: "250px" }}
-                      src={tryIcon}
-                      href="/robots.txt"
-                      target="new"
-                    />
-                  </a>
-                </Row>
 
-                <Row align="center" style={{ marginTop: "20px" }}>
-                  {this.state.success ? (
-                    <Alert message="Congratulation" type="success" />
-                  ) : null}
-                  {!this.state.hiddenFalse ? (
-                    <Alert message="Try Again" type="error" />
-                  ) : null}
-                </Row>
-              </Col>
+            <Row align="center" style={{ marginTop: "20px" }}>
+              {this.state.success ? (
+                <Alert message="Congratulation" type="success" />
+              ) : null}
+              {!this.state.hiddenFalse ? (
+                <Alert message="Try Again" type="error" />
+              ) : null}
             </Row>
-          </div>
-        )}
+          </Col>
+        </Row>
       </React.Fragment>
     );
   }

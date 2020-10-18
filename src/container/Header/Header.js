@@ -12,10 +12,10 @@ class Header extends React.Component {
 
     componentDidMount() {
         if (!this.state.token
-            && window.location.href !== "http://localhost:3000/"
-            && window.location.href !== "http://localhost:3000/auth/true"
-            && window.location.href !== "http://localhost:3000/auth/false") {
-            window.location.href = 'http://localhost:3000/auth/true'
+            && window.location.href !== "http://34.92.55.141:3000/"
+            && window.location.href !== "http://34.92.55.141:3000/auth/true"
+            && window.location.href !== "http://34.92.55.141:3000/auth/false") {
+            window.location.href = 'http://34.92.55.141:3000/auth/true'
         }
     }
 

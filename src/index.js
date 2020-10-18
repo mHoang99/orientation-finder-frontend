@@ -5,7 +5,7 @@ import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import axios from "axios";
 
-axios.defaults.baseURL = "http://10.1.10.90:8080/";
+axios.defaults.baseURL = "http://34.92.55.141:8080/";
 axios.defaults.headers.post["Content-Type"] = "application/json";
 axios.defaults.headers.post["Access-Control-Allow-Origin"] = "*";
 
