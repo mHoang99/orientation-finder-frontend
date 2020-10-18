@@ -68,11 +68,7 @@ class RegisterForm extends React.Component {
             .then(
                 response => {
                     console.log(response)
-                    if (response.success) {
-                        this.setState({
-                            message: response.data.message,
-                            successful: true
-                        });
+                    if (response.data.success) {
                         this.props.switchType()
                     } else {
                         window.alert(response.message)
@@ -89,11 +85,6 @@ class RegisterForm extends React.Component {
                             error.response.data.message) ||
                         error.message ||
                         error.toString();
-
-                    this.setState({
-                        successful: false,
-                        message: resMessage
-                    });
                     window.alert(resMessage)
                 }
             )

@@ -34,11 +34,6 @@ class LoginForm extends React.Component {
                         error.response.data.message) ||
                     error.message ||
                     error.toString();
-
-                this.setState({
-                    loading: false,
-                    message: resMessage,
-                });
                 window.alert(resMessage)
                 
             }
@@ -84,11 +79,6 @@ class LoginForm extends React.Component {
                         error.response.data.message) ||
                     error.message ||
                     error.toString();
-
-                this.setState({
-                    loading: false,
-                    message: resMessage,
-                });
             })
     }
 
